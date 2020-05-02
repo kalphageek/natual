@@ -1,7 +1,7 @@
 package me.kalpha.natural.event;
 
 import me.kalpha.natural.common.Description;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 import org.springframework.validation.BeanPropertyBindingResult;
 import org.springframework.validation.Errors;
 

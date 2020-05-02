@@ -1,7 +1,7 @@
 package me.kalpha.natural.event;
 
 import lombok.extern.slf4j.Slf4j;
-import me.kalpha.natural.common.ErrorResource;
+import me.kalpha.natural.common.ErrorModel;
 import me.kalpha.natural.user.CurrentUser;
 import me.kalpha.natural.user.User;
 import org.modelmapper.ModelMapper;
@@ -18,8 +18,8 @@ import javax.validation.Valid;
 import java.net.URI;
 import java.util.Optional;
 
-import static org.springframework.hateoas.mvc.ControllerLinkBuilder.linkTo;
-import static org.springframework.hateoas.mvc.ControllerLinkBuilder.methodOn;
+import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.linkTo;
+import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.methodOn;
 
 @RestController
 @RequestMapping(value = "/api/events")
@@ -47,14 +47,14 @@ public class EventController {
         }
 
         Page<Event> events = eventRepository.findAll(pageable);
-        var resources = assembler.toResource(events, entity -> new EventResource(entity));
-        resources.add(linkTo(EventController.class).withRel("events"));
-        resources.add(linkTo(methodOn(EventController.class).getEvent(null, null)).withRel("get-an-event"));
+        var pagedModel = assembler.toModel(events, e -> new EventModel(e));
+        pagedModel.add(linkTo(EventController.class).withRel("events"));
+        pagedModel.add(linkTo(methodOn(EventController.class).getEvent(null, null)).withRel("get-an-event"));
         if (currentUser != null) {
-            resources.add(linkTo(methodOn(EventController.class).createEvent(null, null, null)).withRel("create-new-event"));
+            pagedModel.add(linkTo(methodOn(EventController.class).createEvent(null, null, null)).withRel("create-new-event"));
         }
-        resources.add(linkToProfile("resources-events-list"));
-        return ResponseEntity.ok().body(resources);
+        pagedModel.add(linkToProfile("resources-events-list"));
+        return ResponseEntity.ok().body(pagedModel);
     }
 
     @GetMapping("/{id}")
@@ -65,12 +65,12 @@ public class EventController {
         }
 
         Event event = byId.get();
-        EventResource eventResource = new EventResource(event);
+        EventModel eventModel = new EventModel(event);
         if (currentUser != null && currentUser.equals(event.getManager())) {
-            eventResource.add(linkToUpdate(event));
+            eventModel.add(linkToUpdate(event));
         }
-        eventResource.add(linkToProfile("resources-events-get"));
-        return ResponseEntity.ok().body(eventResource);
+        eventModel.add(linkToProfile("resources-events-get"));
+        return ResponseEntity.ok().body(eventModel);
     }
 
     @PostMapping
@@ -90,12 +90,12 @@ public class EventController {
         }
 
         Event newEvent = eventRepository.save(event);
-        EventResource eventResource = new EventResource(newEvent);
-        eventResource.add(linkToProfile("resources-events-create"));
-        eventResource.add(linkToUpdate(newEvent));
+        EventModel eventModel = new EventModel(newEvent);
+        eventModel.add(linkToProfile("resources-events-create"));
+        eventModel.add(linkToUpdate(newEvent));
 
         URI newEventLocation = linkTo(methodOn(this.getClass()).getEvent(newEvent.getId(), null)).toUri();
-        return ResponseEntity.created(newEventLocation).body(eventResource);
+        return ResponseEntity.created(newEventLocation).body(eventModel);
     }
 
     @PutMapping("/{id}")
@@ -125,9 +125,9 @@ public class EventController {
             return badRequestResponse(errors);
         }
 
-        EventResource eventResource = new EventResource(event);
-        eventResource.add(linkToProfile("resources-events-update"));
-        return ResponseEntity.ok().body(eventResource);
+        EventModel eventModel = new EventModel(event);
+        eventModel.add(linkToProfile("resources-events-update"));
+        return ResponseEntity.ok().body(eventModel);
     }
 
     @DeleteMapping("/{id")
@@ -144,8 +144,8 @@ public class EventController {
         return ResponseEntity.notFound().build();
     }
 
-    private ResponseEntity<ErrorResource> badRequestResponse(BindingResult errors) {
-        return ResponseEntity.badRequest().body(new ErrorResource(errors));
+    private ResponseEntity<ErrorModel> badRequestResponse(BindingResult errors) {
+        return ResponseEntity.badRequest().body(new ErrorModel(errors));
     }
 
     private Link linkToProfile(String anchor) {
@@ -157,6 +157,6 @@ public class EventController {
     }
 
     private Link linkToUpdate(Event newEvent) {
-        return linkTo(methodOn(EventController.class).update(newEvent.getId(), null, null, null)).withRel("update");
+        return linkTo(methodOn(this.getClass()).update(newEvent.getId(), null, null, null)).withRel("update");
     }
 }

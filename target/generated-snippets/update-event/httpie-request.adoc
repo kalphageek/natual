@@ -1,7 +1,7 @@
 [source,bash]
 ----
 $ echo '{
-  "name" : "FsPbA3pupo",
+  "name" : "2a9MhvBSP0",
   "description" : "testing event apis",
   "beginEnrollmentDateTime" : "2018-10-15T00:00:00",
   "closeEnrollmentDateTime" : "2018-11-03T23:59:00",
@@ -12,6 +12,6 @@ $ echo '{
   "maxPrice" : 0,
   "limitOfEnrollment" : null
 }' | http PUT 'http://localhost:8080/api/events/9' \
-    'Authorization:Bearer 7d294698-90fd-49dc-a412-c4dbb8aa75f9' \
-    'Content-Type:application/json;charset=UTF-8'
+    'Content-Type:application/json;charset=UTF-8' \
+    'Authorization:Bearer 93f0b914-d218-445c-ba9b-509b67eaeee5'
 ----

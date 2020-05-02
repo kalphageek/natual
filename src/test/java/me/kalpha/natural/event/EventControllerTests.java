@@ -9,8 +9,8 @@ import me.kalpha.natural.user.UserRole;
 import me.kalpha.natural.user.UserService;
 import org.assertj.core.internal.bytebuddy.utility.RandomString;
 import org.hamcrest.Matchers;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
@@ -50,7 +50,7 @@ public class EventControllerTests extends BaseControllerTests {
     @Autowired
     AppSecurityProperties appSecurityProperties;
 
-    @Before
+    @BeforeEach
     public void setUp() {
         this.eventRepository.deleteAll();
         this.userRepository.deleteAll();

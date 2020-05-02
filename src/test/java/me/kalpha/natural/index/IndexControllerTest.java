@@ -1,7 +1,13 @@
 package me.kalpha.natural.index;
 
+import me.kalpha.natural.common.AppSecurityProperties;
 import me.kalpha.natural.common.BaseControllerTests;
-import org.junit.Test;
+import me.kalpha.natural.event.EventRepository;
+import me.kalpha.natural.user.UserRepository;
+import me.kalpha.natural.user.UserService;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import static org.springframework.restdocs.hypermedia.HypermediaDocumentation.linkWithRel;
 import static org.springframework.restdocs.hypermedia.HypermediaDocumentation.links;
