@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: me.whiteship.natural.event.EventControllerTests
+-------------------------------------------------------------------------------
+Tests run: 10, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 12.712 s - in me.whiteship.natural.event.EventControllerTests

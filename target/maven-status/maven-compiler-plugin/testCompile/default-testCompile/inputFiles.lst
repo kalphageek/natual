@@ -1,0 +1,10 @@
+/home/jjd/workspace/natural/src/test/java/me/whiteship/natural/NaturalApplicationTests.java
+/home/jjd/workspace/natural/src/test/java/me/whiteship/natural/user/CurrentUserTests.java
+/home/jjd/workspace/natural/src/test/java/me/whiteship/natural/index/IndexControllerTest.java
+/home/jjd/workspace/natural/src/test/java/me/whiteship/natural/user/UserRepositoryTest.java
+/home/jjd/workspace/natural/src/test/java/me/whiteship/natural/common/BaseControllerTests.java
+/home/jjd/workspace/natural/src/test/java/me/whiteship/natural/event/EventValidatorTest.java
+/home/jjd/workspace/natural/src/test/java/me/whiteship/natural/security/OAuth2ServerConfigTests.java
+/home/jjd/workspace/natural/src/test/java/me/whiteship/natural/common/TestRestDocConfiguration.java
+/home/jjd/workspace/natural/src/test/java/me/whiteship/natural/event/EventControllerTests.java
+/home/jjd/workspace/natural/src/test/java/me/whiteship/natural/user/UserServiceTest.java

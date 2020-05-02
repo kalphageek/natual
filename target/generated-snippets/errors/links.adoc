@@ -1,0 +1,7 @@
+|===
+|Relation|Description
+
+|`+index+`
+|Link to index
+
+|===

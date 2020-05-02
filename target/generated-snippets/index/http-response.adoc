@@ -1,0 +1,21 @@
+[source,http,options="nowrap"]
+----
+HTTP/1.1 200 OK
+Pragma: no-cache
+X-XSS-Protection: 1; mode=block
+Expires: 0
+X-Frame-Options: DENY
+X-Content-Type-Options: nosniff
+Content-Type: application/hal+json;charset=UTF-8
+Content-Length: 95
+Link: </docs/index.html>; rel="profile"
+Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+
+{
+  "_links" : {
+    "events" : {
+      "href" : "http://localhost:8080/api/events"
+    }
+  }
+}
+----

@@ -1,0 +1,22 @@
+[source,bash]
+----
+$ echo '{
+  "id" : null,
+  "name" : null,
+  "description" : null,
+  "beginEnrollmentDateTime" : null,
+  "closeEnrollmentDateTime" : null,
+  "beginEventDateTime" : null,
+  "endEventDateTime" : null,
+  "location" : null,
+  "basePrice" : null,
+  "maxPrice" : null,
+  "limitOfEnrollment" : null,
+  "free" : false,
+  "offline" : false,
+  "eventStatus" : null,
+  "manager" : null
+}' | http POST 'http://localhost:8080/api/events' \
+    'Authorization:Bearer 42c55924-4b2f-423b-aab9-65c1e64304b8' \
+    'Content-Type:application/json;charset=UTF-8'
+----

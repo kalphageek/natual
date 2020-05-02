@@ -1,0 +1,42 @@
+{
+  "groups": [
+    {
+      "name": "app-security",
+      "type": "me.whiteship.natural.common.AppSecurityProperties",
+      "sourceType": "me.whiteship.natural.common.AppSecurityProperties"
+    }
+  ],
+  "properties": [
+    {
+      "name": "app-security.admin-password",
+      "type": "java.lang.String",
+      "sourceType": "me.whiteship.natural.common.AppSecurityProperties"
+    },
+    {
+      "name": "app-security.admin-username",
+      "type": "java.lang.String",
+      "sourceType": "me.whiteship.natural.common.AppSecurityProperties"
+    },
+    {
+      "name": "app-security.default-client-id",
+      "type": "java.lang.String",
+      "sourceType": "me.whiteship.natural.common.AppSecurityProperties"
+    },
+    {
+      "name": "app-security.default-client-secret",
+      "type": "java.lang.String",
+      "sourceType": "me.whiteship.natural.common.AppSecurityProperties"
+    },
+    {
+      "name": "app-security.user-password",
+      "type": "java.lang.String",
+      "sourceType": "me.whiteship.natural.common.AppSecurityProperties"
+    },
+    {
+      "name": "app-security.user-username",
+      "type": "java.lang.String",
+      "sourceType": "me.whiteship.natural.common.AppSecurityProperties"
+    }
+  ],
+  "hints": []
+}

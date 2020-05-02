@@ -1,0 +1,20 @@
+[source,options="nowrap"]
+----
+{
+  "id" : null,
+  "name" : null,
+  "description" : null,
+  "beginEnrollmentDateTime" : null,
+  "closeEnrollmentDateTime" : null,
+  "beginEventDateTime" : null,
+  "endEventDateTime" : null,
+  "location" : null,
+  "basePrice" : null,
+  "maxPrice" : null,
+  "limitOfEnrollment" : null,
+  "free" : false,
+  "offline" : false,
+  "eventStatus" : null,
+  "manager" : null
+}
+----

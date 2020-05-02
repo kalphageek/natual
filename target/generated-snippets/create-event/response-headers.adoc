@@ -1,0 +1,7 @@
+|===
+|Name|Description
+
+|`+location+`
+|new event URL
+
+|===

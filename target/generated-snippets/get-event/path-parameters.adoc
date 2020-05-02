@@ -1,0 +1,8 @@
+.+/api/events/{id}+
+|===
+|Parameter|Description
+
+|`+id+`
+|identifier of an Event.
+
+|===

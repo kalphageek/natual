@@ -1,0 +1,48 @@
+[source,http,options="nowrap"]
+----
+HTTP/1.1 201 Created
+Location: http://localhost:8080/api/events/11
+Pragma: no-cache
+X-XSS-Protection: 1; mode=block
+Content-Length: 808
+Expires: 0
+X-Frame-Options: DENY
+X-Content-Type-Options: nosniff
+Link: </docs/index.html>; rel="profile"
+Content-Type: application/json;charset=UTF-8
+Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+
+{
+  "id" : 11,
+  "name" : "test event",
+  "description" : "testing event apis",
+  "beginEnrollmentDateTime" : "2018-10-15T00:00:00",
+  "closeEnrollmentDateTime" : "2018-11-03T23:59:00",
+  "beginEventDateTime" : "2018-11-10T09:00:00",
+  "endEventDateTime" : "2018-11-10T14:00:00",
+  "location" : "Inflean",
+  "basePrice" : 50000,
+  "maxPrice" : 10000,
+  "limitOfEnrollment" : null,
+  "free" : false,
+  "offline" : true,
+  "eventStatus" : "DRAFT",
+  "manager" : {
+    "id" : 10
+  },
+  "_links" : {
+    "event" : {
+      "href" : "http://localhost:8080/api/events"
+    },
+    "self" : {
+      "href" : "http://localhost:8080/api/events/11"
+    },
+    "profile" : {
+      "href" : "/docs/index.html#resources-events-create"
+    },
+    "update" : {
+      "href" : "http://localhost:8080/api/events/11"
+    }
+  }
+}
+----

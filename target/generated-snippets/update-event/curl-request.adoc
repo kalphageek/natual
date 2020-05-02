@@ -1,0 +1,18 @@
+[source,bash]
+----
+$ curl 'http://localhost:8080/api/events/9' -i -X PUT \
+    -H 'Authorization: Bearer 1c0ecd1c-5a35-4ac1-b307-27cbd874c655' \
+    -H 'Content-Type: application/json;charset=UTF-8' \
+    -d '{
+  "name" : "np5ktRW6Az",
+  "description" : "testing event apis",
+  "beginEnrollmentDateTime" : "2018-10-15T00:00:00",
+  "closeEnrollmentDateTime" : "2018-11-03T23:59:00",
+  "beginEventDateTime" : "2018-11-10T09:00:00",
+  "endEventDateTime" : "2018-11-10T14:00:00",
+  "location" : null,
+  "basePrice" : 0,
+  "maxPrice" : 0,
+  "limitOfEnrollment" : null
+}'
+----

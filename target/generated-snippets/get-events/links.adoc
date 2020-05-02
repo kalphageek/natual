@@ -1,0 +1,13 @@
+|===
+|Relation|Description
+
+|`+profile+`
+|Link to profile
+
+|`+self+`
+|Link to self
+
+|`+get-an-event+`
+|Link to get an event
+
+|===

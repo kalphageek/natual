@@ -1,0 +1,10 @@
+[source,options="nowrap"]
+----
+{
+  "_links" : {
+    "events" : {
+      "href" : "http://localhost:8080/api/events"
+    }
+  }
+}
+----

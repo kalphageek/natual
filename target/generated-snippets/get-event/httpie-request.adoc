@@ -1,0 +1,5 @@
+[source,bash]
+----
+$ http GET 'http://localhost:8080/api/events/18' \
+    'Authorization:Bearer 636795ea-31ed-48d3-ac74-484cb684f327'
+----

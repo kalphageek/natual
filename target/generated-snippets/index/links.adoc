@@ -1,0 +1,7 @@
+|===
+|Relation|Description
+
+|`+events+`
+|The <<resources-events,Events resource>>
+
+|===

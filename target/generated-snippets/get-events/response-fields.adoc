@@ -1,0 +1,20 @@
+|===
+|Path|Type|Description
+
+|`+page.number+`
+|`+Number+`
+|The number of this page.
+
+|`+page.size+`
+|`+Number+`
+|The size of this page.
+
+|`+page.totalPages+`
+|`+Number+`
+|The total number of pages.
+
+|`+page.totalElements+`
+|`+Number+`
+|The total number of results.
+
+|===

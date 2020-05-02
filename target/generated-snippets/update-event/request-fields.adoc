@@ -1,0 +1,47 @@
+|===
+|Path|Type|Description
+
+|`+name+`
+|`+String+`
+|event name
+
+|`+description+`
+|`+String+`
+|description of the event
+
+|`+beginEnrollmentDateTime+`
+|`+String+`
+|date and time to begin enrollment.
+
+|`+closeEnrollmentDateTime+`
+|`+String+`
+|date and time to close enrollment.
+
+|`+beginEventDateTime+`
+|`+String+`
+|date and time to begin the event.
+
+|`+endEventDateTime+`
+|`+String+`
+|date and time to end the event.
+
+|`+location+`
+|`+Null+`
+|link to the place where the event hold
+
+|`+basePrice+`
+|`+Number+`
+|price of ticket to enroll.
+
+|`+maxPrice+`
+|`+Number+`
+|maximum price of ticket to enroll. 
+if this value does not provided, then it means non-limited bidding will happen,
+and can't expect how much it would be to enroll the event eventually.
+If both basePrice and maxPrice are null or 0, it means free event.
+
+|`+limitOfEnrollment+`
+|`+Null+`
+|number of limit
+
+|===
