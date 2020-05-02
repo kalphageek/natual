@@ -3,17 +3,17 @@
 {
   "content" : [ {
     "objectName" : "createOrUpdate",
-    "field" : "beginEventDateTime",
-    "defaultMessage" : "must not be null",
-    "rejectedValue" : ""
-  }, {
-    "objectName" : "createOrUpdate",
     "field" : "closeEnrollmentDateTime",
     "defaultMessage" : "must not be null",
     "rejectedValue" : ""
   }, {
     "objectName" : "createOrUpdate",
     "field" : "beginEnrollmentDateTime",
+    "defaultMessage" : "must not be null",
+    "rejectedValue" : ""
+  }, {
+    "objectName" : "createOrUpdate",
+    "field" : "beginEventDateTime",
     "defaultMessage" : "must not be null",
     "rejectedValue" : ""
   }, {

@@ -14,17 +14,17 @@ Cache-Control: no-cache, no-store, max-age=0, must-revalidate
 {
   "content" : [ {
     "objectName" : "createOrUpdate",
-    "field" : "beginEventDateTime",
-    "defaultMessage" : "must not be null",
-    "rejectedValue" : ""
-  }, {
-    "objectName" : "createOrUpdate",
     "field" : "closeEnrollmentDateTime",
     "defaultMessage" : "must not be null",
     "rejectedValue" : ""
   }, {
     "objectName" : "createOrUpdate",
     "field" : "beginEnrollmentDateTime",
+    "defaultMessage" : "must not be null",
+    "rejectedValue" : ""
+  }, {
+    "objectName" : "createOrUpdate",
+    "field" : "beginEventDateTime",
     "defaultMessage" : "must not be null",
     "rejectedValue" : ""
   }, {

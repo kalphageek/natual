@@ -13,7 +13,7 @@
   "maxPrice" : null,
   "limitOfEnrollment" : null,
   "free" : false,
-  "offline" : false,
+  "offLine" : false,
   "eventStatus" : null,
   "manager" : null
 }

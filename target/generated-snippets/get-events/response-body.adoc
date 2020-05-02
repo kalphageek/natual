@@ -15,7 +15,7 @@
       "maxPrice" : 10000,
       "limitOfEnrollment" : null,
       "free" : false,
-      "offline" : false,
+      "offLine" : false,
       "eventStatus" : "DRAFT",
       "manager" : null,
       "_links" : {

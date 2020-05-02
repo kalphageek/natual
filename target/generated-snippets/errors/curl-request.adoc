@@ -1,7 +1,7 @@
 [source,bash]
 ----
 $ curl 'http://localhost:8080/api/events' -i -X POST \
-    -H 'Authorization: Bearer 42c55924-4b2f-423b-aab9-65c1e64304b8' \
+    -H 'Authorization: Bearer d5833c7b-43ca-4a77-9a10-46fef49e4a09' \
     -H 'Content-Type: application/json;charset=UTF-8' \
     -d '{
   "id" : null,
@@ -16,7 +16,7 @@ $ curl 'http://localhost:8080/api/events' -i -X POST \
   "maxPrice" : null,
   "limitOfEnrollment" : null,
   "free" : false,
-  "offline" : false,
+  "offLine" : false,
   "eventStatus" : null,
   "manager" : null
 }'

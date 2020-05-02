@@ -1,7 +1,115 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9819c143-c0ef-4bd8-b9cb-1197330f4632" name="Default Changelist" comment="" />
+    <list default="true" id="9819c143-c0ef-4bd8-b9cb-1197330f4632" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/whiteship/natural/NaturalApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/kalpha/natural/NaturalApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/whiteship/natural/common/AppSecurityProperties.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/kalpha/natural/common/AppSecurityProperties.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/whiteship/natural/common/Description.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/kalpha/natural/common/Description.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/whiteship/natural/common/ErrorResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/kalpha/natural/common/ErrorResource.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/whiteship/natural/common/ErrorsSerializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/kalpha/natural/common/ErrorsSerializer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/whiteship/natural/common/ProfileHeaderInterceptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/kalpha/natural/common/ProfileHeaderInterceptor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/whiteship/natural/configs/AppConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/kalpha/natural/configs/AppConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/whiteship/natural/configs/AuthServerConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/kalpha/natural/configs/AuthServerConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/whiteship/natural/configs/ResourceServerConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/kalpha/natural/configs/ResourceServerConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/whiteship/natural/configs/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/kalpha/natural/configs/SecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/whiteship/natural/configs/WebConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/kalpha/natural/configs/WebConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/whiteship/natural/event/Event.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/kalpha/natural/event/Event.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/whiteship/natural/event/EventController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/kalpha/natural/event/EventController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/whiteship/natural/event/EventDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/kalpha/natural/event/EventDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/whiteship/natural/event/EventRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/kalpha/natural/event/EventRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/whiteship/natural/event/EventResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/kalpha/natural/event/EventResource.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/whiteship/natural/event/EventStatus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/kalpha/natural/event/EventStatus.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/whiteship/natural/event/EventValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/kalpha/natural/event/EventValidator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/whiteship/natural/index/IndexController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/kalpha/natural/index/IndexController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/whiteship/natural/init/DefaultUsersInitializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/kalpha/natural/init/DefaultUsersInitializer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/whiteship/natural/user/CurrentUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/kalpha/natural/user/CurrentUser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/whiteship/natural/user/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/kalpha/natural/user/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/whiteship/natural/user/UserAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/kalpha/natural/user/UserAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/whiteship/natural/user/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/kalpha/natural/user/UserRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/whiteship/natural/user/UserRole.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/kalpha/natural/user/UserRole.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/whiteship/natural/user/UserSerializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/kalpha/natural/user/UserSerializer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/whiteship/natural/user/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/kalpha/natural/user/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/me/whiteship/natural/NaturalApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/me/kalpha/natural/NaturalApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/me/whiteship/natural/common/BaseControllerTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/me/kalpha/natural/common/BaseControllerTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/me/whiteship/natural/common/TestRestDocConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/me/kalpha/natural/common/TestRestDocConfiguration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/me/whiteship/natural/event/EventControllerTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/me/kalpha/natural/event/EventControllerTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/me/whiteship/natural/event/EventValidatorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/me/kalpha/natural/event/EventValidatorTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/me/whiteship/natural/index/IndexControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/me/kalpha/natural/index/IndexControllerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/me/whiteship/natural/security/OAuth2ServerConfigTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/me/kalpha/natural/security/OAuth2ServerConfigTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/me/whiteship/natural/user/CurrentUserTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/me/kalpha/natural/user/CurrentUserTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/me/whiteship/natural/user/UserRepositoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/me/kalpha/natural/user/UserRepositoryTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/me/whiteship/natural/user/UserServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/me/kalpha/natural/user/UserServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/spring-configuration-metadata.json" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/META-INF/spring-configuration-metadata.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/me/whiteship/natural/NaturalApplication.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/me/whiteship/natural/common/AppSecurityProperties.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/me/whiteship/natural/common/Description.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/me/whiteship/natural/common/ErrorResource.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/me/whiteship/natural/common/ErrorsSerializer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/me/whiteship/natural/common/ProfileHeaderInterceptor.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/me/whiteship/natural/configs/AppConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/me/whiteship/natural/configs/AuthServerConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/me/whiteship/natural/configs/ResourceServerConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/me/whiteship/natural/configs/SecurityConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/me/whiteship/natural/configs/WebConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/me/whiteship/natural/event/Event$EventBuilder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/me/whiteship/natural/event/Event.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/me/whiteship/natural/event/EventController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/me/whiteship/natural/event/EventDto$CreateOrUpdate$CreateOrUpdateBuilder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/me/whiteship/natural/event/EventDto$CreateOrUpdate.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/me/whiteship/natural/event/EventDto.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/me/whiteship/natural/event/EventRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/me/whiteship/natural/event/EventResource.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/me/whiteship/natural/event/EventStatus.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/me/whiteship/natural/event/EventValidator.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/me/whiteship/natural/index/IndexController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/me/whiteship/natural/init/DefaultUsersInitializer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/me/whiteship/natural/user/CurrentUser.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/me/whiteship/natural/user/User$UserBuilder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/me/whiteship/natural/user/User.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/me/whiteship/natural/user/UserAdapter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/me/whiteship/natural/user/UserRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/me/whiteship/natural/user/UserRole.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/me/whiteship/natural/user/UserSerializer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/me/whiteship/natural/user/UserService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/generated-snippets/create-event/curl-request.adoc" beforeDir="false" afterPath="$PROJECT_DIR$/target/generated-snippets/create-event/curl-request.adoc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/generated-snippets/create-event/http-request.adoc" beforeDir="false" afterPath="$PROJECT_DIR$/target/generated-snippets/create-event/http-request.adoc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/generated-snippets/create-event/http-response.adoc" beforeDir="false" afterPath="$PROJECT_DIR$/target/generated-snippets/create-event/http-response.adoc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/generated-snippets/create-event/httpie-request.adoc" beforeDir="false" afterPath="$PROJECT_DIR$/target/generated-snippets/create-event/httpie-request.adoc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/generated-snippets/create-event/response-body.adoc" beforeDir="false" afterPath="$PROJECT_DIR$/target/generated-snippets/create-event/response-body.adoc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/generated-snippets/errors/curl-request.adoc" beforeDir="false" afterPath="$PROJECT_DIR$/target/generated-snippets/errors/curl-request.adoc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/generated-snippets/errors/http-request.adoc" beforeDir="false" afterPath="$PROJECT_DIR$/target/generated-snippets/errors/http-request.adoc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/generated-snippets/errors/http-response.adoc" beforeDir="false" afterPath="$PROJECT_DIR$/target/generated-snippets/errors/http-response.adoc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/generated-snippets/errors/httpie-request.adoc" beforeDir="false" afterPath="$PROJECT_DIR$/target/generated-snippets/errors/httpie-request.adoc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/generated-snippets/errors/request-body.adoc" beforeDir="false" afterPath="$PROJECT_DIR$/target/generated-snippets/errors/request-body.adoc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/generated-snippets/errors/response-body.adoc" beforeDir="false" afterPath="$PROJECT_DIR$/target/generated-snippets/errors/response-body.adoc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/generated-snippets/get-event/curl-request.adoc" beforeDir="false" afterPath="$PROJECT_DIR$/target/generated-snippets/get-event/curl-request.adoc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/generated-snippets/get-event/http-request.adoc" beforeDir="false" afterPath="$PROJECT_DIR$/target/generated-snippets/get-event/http-request.adoc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/generated-snippets/get-event/http-response.adoc" beforeDir="false" afterPath="$PROJECT_DIR$/target/generated-snippets/get-event/http-response.adoc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/generated-snippets/get-event/httpie-request.adoc" beforeDir="false" afterPath="$PROJECT_DIR$/target/generated-snippets/get-event/httpie-request.adoc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/generated-snippets/get-event/response-body.adoc" beforeDir="false" afterPath="$PROJECT_DIR$/target/generated-snippets/get-event/response-body.adoc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/generated-snippets/get-events/curl-request.adoc" beforeDir="false" afterPath="$PROJECT_DIR$/target/generated-snippets/get-events/curl-request.adoc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/generated-snippets/get-events/http-request.adoc" beforeDir="false" afterPath="$PROJECT_DIR$/target/generated-snippets/get-events/http-request.adoc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/generated-snippets/get-events/http-response.adoc" beforeDir="false" afterPath="$PROJECT_DIR$/target/generated-snippets/get-events/http-response.adoc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/generated-snippets/get-events/httpie-request.adoc" beforeDir="false" afterPath="$PROJECT_DIR$/target/generated-snippets/get-events/httpie-request.adoc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/generated-snippets/get-events/response-body.adoc" beforeDir="false" afterPath="$PROJECT_DIR$/target/generated-snippets/get-events/response-body.adoc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/generated-snippets/update-event/curl-request.adoc" beforeDir="false" afterPath="$PROJECT_DIR$/target/generated-snippets/update-event/curl-request.adoc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/generated-snippets/update-event/http-request.adoc" beforeDir="false" afterPath="$PROJECT_DIR$/target/generated-snippets/update-event/http-request.adoc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/generated-snippets/update-event/http-response.adoc" beforeDir="false" afterPath="$PROJECT_DIR$/target/generated-snippets/update-event/http-response.adoc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/generated-snippets/update-event/httpie-request.adoc" beforeDir="false" afterPath="$PROJECT_DIR$/target/generated-snippets/update-event/httpie-request.adoc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/generated-snippets/update-event/request-body.adoc" beforeDir="false" afterPath="$PROJECT_DIR$/target/generated-snippets/update-event/request-body.adoc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/generated-snippets/update-event/response-body.adoc" beforeDir="false" afterPath="$PROJECT_DIR$/target/generated-snippets/update-event/response-body.adoc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/me/whiteship/natural/NaturalApplicationTests.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/me/whiteship/natural/common/BaseControllerTests.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/me/whiteship/natural/common/TestRestDocConfiguration.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/me/whiteship/natural/event/EventControllerTests.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/me/whiteship/natural/event/EventValidatorTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/me/whiteship/natural/index/IndexControllerTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/me/whiteship/natural/security/OAuth2ServerConfigTests.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/me/whiteship/natural/user/CurrentUserTests.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/me/whiteship/natural/user/UserRepositoryTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/me/whiteship/natural/user/UserServiceTest.class" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -20,7 +128,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
-  <component name="RunManager" selected="Application.NaturalApplication">
+  <component name="RunManager" selected="JUnit.EventControllerTests">
     <configuration name="NaturalApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="me.whiteship.natural.NaturalApplication" />
       <module name="natual" />
@@ -30,6 +138,35 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="EventControllerTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="natual" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="me.kalpha.natural.event.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="me.kalpha.natural.event" />
+      <option name="MAIN_CLASS_NAME" value="me.kalpha.natural.event.EventControllerTests" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="me.kalpha.natural in natual" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="natual" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="me.kalpha.natural.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="me.kalpha.natural" />
+      <option name="TEST_OBJECT" value="package" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -50,6 +187,8 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.EventControllerTests" />
+        <item itemvalue="JUnit.me.kalpha.natural in natual" />
         <item itemvalue="Application.NaturalApplication" />
         <item itemvalue="JUnit.me.whiteship.natural in natual" />
       </list>
@@ -69,22 +208,22 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
-    <state width="1320" height="137" key="GridCell.Tab.0.bottom" timestamp="1588414590550">
+    <state width="1320" height="174" key="GridCell.Tab.0.bottom" timestamp="1588416543239">
       <screen x="0" y="27" width="1368" height="741" />
     </state>
-    <state width="1320" height="137" key="GridCell.Tab.0.bottom/0.27.1368.741@0.27.1368.741" timestamp="1588414590550" />
-    <state width="1320" height="137" key="GridCell.Tab.0.center" timestamp="1588414590546">
+    <state width="1320" height="174" key="GridCell.Tab.0.bottom/0.27.1368.741@0.27.1368.741" timestamp="1588416543239" />
+    <state width="1320" height="174" key="GridCell.Tab.0.center" timestamp="1588416543236">
       <screen x="0" y="27" width="1368" height="741" />
     </state>
-    <state width="1320" height="137" key="GridCell.Tab.0.center/0.27.1368.741@0.27.1368.741" timestamp="1588414590546" />
-    <state width="1320" height="137" key="GridCell.Tab.0.left" timestamp="1588414590543">
+    <state width="1320" height="174" key="GridCell.Tab.0.center/0.27.1368.741@0.27.1368.741" timestamp="1588416543236" />
+    <state width="1320" height="174" key="GridCell.Tab.0.left" timestamp="1588416543233">
       <screen x="0" y="27" width="1368" height="741" />
     </state>
-    <state width="1320" height="137" key="GridCell.Tab.0.left/0.27.1368.741@0.27.1368.741" timestamp="1588414590543" />
-    <state width="1320" height="137" key="GridCell.Tab.0.right" timestamp="1588414590548">
+    <state width="1320" height="174" key="GridCell.Tab.0.left/0.27.1368.741@0.27.1368.741" timestamp="1588416543233" />
+    <state width="1320" height="174" key="GridCell.Tab.0.right" timestamp="1588416543238">
       <screen x="0" y="27" width="1368" height="741" />
     </state>
-    <state width="1320" height="137" key="GridCell.Tab.0.right/0.27.1368.741@0.27.1368.741" timestamp="1588414590548" />
+    <state width="1320" height="174" key="GridCell.Tab.0.right/0.27.1368.741@0.27.1368.741" timestamp="1588416543238" />
     <state width="1320" height="214" key="GridCell.Tab.1.bottom" timestamp="1588410146421">
       <screen x="0" y="27" width="1368" height="741" />
     </state>

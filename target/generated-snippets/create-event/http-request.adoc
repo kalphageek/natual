@@ -2,8 +2,8 @@
 ----
 POST /api/events HTTP/1.1
 Accept: application/json;charset=UTF-8
-Authorization: Bearer a1eccfef-220e-4f4a-bad5-c6d0cea6f3cf
 Content-Length: 368
+Authorization: Bearer b41ac51d-1735-487b-b2ac-2960a7f4f3a8
 Content-Type: application/json;charset=UTF-8
 Host: localhost:8080
 
