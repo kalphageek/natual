@@ -1,8 +1,8 @@
 [source,options="nowrap"]
 ----
 {
-  "id" : 8,
-  "name" : "OR5sQBsRIF",
+  "id" : 10,
+  "name" : "Kw6MHCh3WG",
   "description" : "testing event apis",
   "beginEnrollmentDateTime" : "2018-10-15T00:00:00",
   "closeEnrollmentDateTime" : "2018-11-03T23:59:00",
@@ -16,14 +16,17 @@
   "offLine" : false,
   "eventStatus" : "DRAFT",
   "manager" : {
-    "id" : 7
+    "id" : 9
   },
   "_links" : {
-    "event" : {
+    "get-events" : {
       "href" : "http://localhost:8080/api/events"
     },
     "self" : {
-      "href" : "http://localhost:8080/api/events/8"
+      "href" : "http://localhost:8080/api/events/10"
+    },
+    "delete-event" : {
+      "href" : "http://localhost:8080/api/events/10"
     },
     "profile" : {
       "href" : "/docs/index.html#resources-events-update"

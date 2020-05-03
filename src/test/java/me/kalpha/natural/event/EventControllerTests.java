@@ -82,8 +82,9 @@ public class EventControllerTests extends BaseControllerTests {
                     links(halLinks(),
                         linkWithRel("profile").description("Link to profile"),
                         linkWithRel("self").description("Link to the created event"),
-                        linkWithRel("event").description("Link to view all events"),
-                        linkWithRel("update").description("Link to update the event")
+                        linkWithRel("get-events").description("Link to view all events"),
+                        linkWithRel("update-event").description("Link to update the event"),
+                        linkWithRel("delete-event").description("Link to delete the event")
                     ),
                     getRequestFieldsSnippet(),
                     relaxedResponseFields(
@@ -102,7 +103,7 @@ public class EventControllerTests extends BaseControllerTests {
 
     @Description("Getting an event successfully as a user not manager of the event")
     @Test
-    public void getEvent() throws Exception {
+    public void getAnEvent() throws Exception {
         // Given
         Event newEvent = this.eventRepository.save(this.createSampleEvent());
 
@@ -113,10 +114,10 @@ public class EventControllerTests extends BaseControllerTests {
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("_links.self").hasJsonPath())
                 .andExpect(jsonPath("_links.update").doesNotExist())
-                .andDo(document("get-event",
+                .andDo(document("get-an-event",
                     relaxedLinks(
                         linkWithRel("self").description("link to this event."),
-                        linkWithRel("event").description("link to all events."),
+                        linkWithRel("get-events").description("link to all events."),
                         linkWithRel("profile").description("link to profile.")
                     ),
                     pathParameters(
@@ -210,6 +211,39 @@ public class EventControllerTests extends BaseControllerTests {
                     relaxedResponseFields(
                         fieldWithPath("id").description("id of the event")
                     )
+                ))
+        ;
+    }
+
+    @Description("deleteEvent : 삭제 테스트")
+    @Test
+    public void deleteEvent() throws Exception {
+        // Given
+        String email = "manager@email.com";
+        String originalPassword = "manager";
+        User manager = userService.createUser(
+                User.builder().email(email).password(originalPassword).roles(Set.of(UserRole.USER)).build()
+        );
+
+        Event sampleEvent = this.createSampleEvent();
+        sampleEvent.setManager(manager);
+        Event existEvent = this.eventRepository.save(sampleEvent);
+
+        mockMvc.perform(RestDocumentationRequestBuilders.delete("/api/events/{id}", existEvent.getId())
+                .header(HttpHeaders.AUTHORIZATION, bearer(getAccessToken(manager, originalPassword)))
+                .contentType(MediaType.APPLICATION_JSON_UTF8))
+                .andDo(print())
+                .andExpect(status().isOk())
+                .andDo(document("delete-event",
+                        links(halLinks(),
+                                linkWithRel("profile").description("Link to event profile"),
+                                linkWithRel("self").description("Link to the deleted event"),
+                                linkWithRel("get-events").description("Link to view all events"),
+                                linkWithRel("create-new-event").description("Link to create the event")
+                        ),
+                        pathParameters(
+                                parameterWithName("id").description("identifier of deleted the event.")
+                        )
                 ))
         ;
     }
@@ -334,7 +368,7 @@ public class EventControllerTests extends BaseControllerTests {
                 .andDo(print())
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("_links.self").hasJsonPath())
-                .andExpect(jsonPath("_links.update").hasJsonPath())
+                .andExpect(jsonPath("_links.update-event").hasJsonPath())
         ;
     }
 

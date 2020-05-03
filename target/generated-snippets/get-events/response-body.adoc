@@ -3,7 +3,7 @@
 {
   "_embedded" : {
     "eventList" : [ {
-      "id" : 16,
+      "id" : 20,
       "name" : "test event",
       "description" : "testing event apis",
       "beginEnrollmentDateTime" : "2018-10-15T00:00:00",
@@ -19,11 +19,11 @@
       "eventStatus" : "DRAFT",
       "manager" : null,
       "_links" : {
-        "event" : {
+        "get-events" : {
           "href" : "http://localhost:8080/api/events"
         },
         "self" : {
-          "href" : "http://localhost:8080/api/events/16"
+          "href" : "http://localhost:8080/api/events/20"
         }
       }
     } ]
@@ -32,7 +32,7 @@
     "self" : {
       "href" : "http://localhost:8080/api/events?page=0&size=20"
     },
-    "events" : {
+    "get-events" : {
       "href" : "http://localhost:8080/api/events"
     },
     "get-an-event" : {

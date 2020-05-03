@@ -4,6 +4,7 @@ import lombok.extern.slf4j.Slf4j;
 import me.kalpha.natural.common.ErrorModel;
 import me.kalpha.natural.user.CurrentUser;
 import me.kalpha.natural.user.User;
+import me.kalpha.natural.user.UserRole;
 import org.modelmapper.ModelMapper;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -48,17 +49,17 @@ public class EventController {
 
         Page<Event> events = eventRepository.findAll(pageable);
         var pagedModel = assembler.toModel(events, e -> new EventModel(e));
-        pagedModel.add(linkTo(EventController.class).withRel("events"));
-        pagedModel.add(linkTo(methodOn(EventController.class).getEvent(null, null)).withRel("get-an-event"));
+        pagedModel.add(linkTo(EventController.class).withRel("get-events"));
+        pagedModel.add(linkTo(methodOn(EventController.class).get(null, null)).withRel("get-an-event"));
         if (currentUser != null) {
-            pagedModel.add(linkTo(methodOn(EventController.class).createEvent(null, null, null)).withRel("create-new-event"));
+            pagedModel.add(linkTo(methodOn(EventController.class).create(null, null, null)).withRel("create-new-event"));
         }
         pagedModel.add(linkToProfile("resources-events-list"));
         return ResponseEntity.ok().body(pagedModel);
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity getEvent(@PathVariable Integer id, @CurrentUser User currentUser) {
+    public ResponseEntity get(@PathVariable Integer id, @CurrentUser User currentUser) {
         Optional<Event> byId = eventRepository.findById(id);
         if (!byId.isPresent()) {
             return notFoundResponse();
@@ -68,13 +69,14 @@ public class EventController {
         EventModel eventModel = new EventModel(event);
         if (currentUser != null && currentUser.equals(event.getManager())) {
             eventModel.add(linkToUpdate(event));
+            eventModel.add(linkToDelete(event));
         }
         eventModel.add(linkToProfile("resources-events-get"));
         return ResponseEntity.ok().body(eventModel);
     }
 
     @PostMapping
-    public ResponseEntity createEvent(@Valid @RequestBody EventDto.CreateOrUpdate eventCreate,
+    public ResponseEntity create(@Valid @RequestBody EventDto.CreateOrUpdate eventCreate,
                                       BindingResult errors,
                                       @CurrentUser User currentUser) {
         if (errors.hasErrors()) {
@@ -93,8 +95,9 @@ public class EventController {
         EventModel eventModel = new EventModel(newEvent);
         eventModel.add(linkToProfile("resources-events-create"));
         eventModel.add(linkToUpdate(newEvent));
+        eventModel.add(linkToDelete(newEvent));
 
-        URI newEventLocation = linkTo(methodOn(this.getClass()).getEvent(newEvent.getId(), null)).toUri();
+        URI newEventLocation = linkTo(methodOn(this.getClass()).get(newEvent.getId(), null)).toUri();
         return ResponseEntity.created(newEventLocation).body(eventModel);
     }
 
@@ -126,13 +129,32 @@ public class EventController {
         }
 
         EventModel eventModel = new EventModel(event);
+        eventModel.add(linkToDelete(event));
         eventModel.add(linkToProfile("resources-events-update"));
         return ResponseEntity.ok().body(eventModel);
     }
 
-    @DeleteMapping("/{id")
-    public ResponseEntity delete(@PathVariable Integer id) {
-        throw new UnsupportedOperationException();
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity delete(@PathVariable Integer id,
+                                      @CurrentUser User currentUser) {
+        Optional<Event> byId = this.eventRepository.findById(id);
+        if (!byId.isPresent()) {
+            return notFoundResponse();
+        }
+
+        Event event = byId.get();
+        if (currentUser != null && !currentUser.equals(event.getManager())) {
+            return new ResponseEntity(HttpStatus.FORBIDDEN);
+        }
+
+        eventRepository.deleteById(id);
+        EventModel eventModel = new EventModel(event);
+        eventModel.add(linkTo(EventController.class).withRel("get-events"));
+        eventModel.add(linkTo(EventController.class).withRel("create-new-event"));
+        eventModel.add(linkToProfile("resources-events-delete"));
+
+        return ResponseEntity.ok().body(eventModel);
     }
 
     @PostMapping("/{id}/publish")
@@ -157,6 +179,10 @@ public class EventController {
     }
 
     private Link linkToUpdate(Event newEvent) {
-        return linkTo(methodOn(this.getClass()).update(newEvent.getId(), null, null, null)).withRel("update");
+        return linkTo(methodOn(this.getClass()).update(newEvent.getId(), null, null, null)).withRel("update-event");
+    }
+
+    private Link linkToDelete(Event existEvent) {
+        return linkTo(methodOn(this.getClass()).delete(existEvent.getId(), null)).withRel("delete-event");
     }
 }

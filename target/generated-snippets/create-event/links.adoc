@@ -7,10 +7,13 @@
 |`+self+`
 |Link to the created event
 
-|`+event+`
+|`+get-events+`
 |Link to view all events
 
-|`+update+`
+|`+update-event+`
 |Link to update the event
+
+|`+delete-event+`
+|Link to delete the event
 
 |===

@@ -120,7 +120,7 @@ operation::create-event[snippets='request-fields,http-request,response-fields,ht
 
 `Get` 요청을 사용해서 기존 이벤트 하나를 조회할 수 있다.
 
-operation::get-event[snippets='http-request,http-response,links']
+operation::get-an-event[snippets='http-request,http-response,links']
 
 [[resources-events-update]]
 === 이벤트 수정
@@ -134,4 +134,4 @@ operation::update-event[snippets='request-fields,http-request,http-response,link
 
 `DELETE` 요청을 사용해서 기존 이벤트를 삭제할 수 있다.
 
-operation::delete-event[snippets='request-fields,http-request,http-response,links']
+operation::delete-event[snippets='request-fields,http-request,links']

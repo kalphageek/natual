@@ -500,7 +500,6 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <ul class="sectlevel3">
 <li><a href="#resources-events-delete_request_fields">Request fields</a></li>
 <li><a href="#resources-events-delete_http_request">HTTP request</a></li>
-<li><a href="#resources-events-delete_http_response">Example response</a></li>
 <li><a href="#resources-events-delete_links">Links</a></li>
 </ul>
 </li>
@@ -647,17 +646,7 @@ Content-Length: 836
 {
   "content" : [ {
     "objectName" : "createOrUpdate",
-    "field" : "beginEventDateTime",
-    "defaultMessage" : "must not be null",
-    "rejectedValue" : ""
-  }, {
-    "objectName" : "createOrUpdate",
-    "field" : "name",
-    "defaultMessage" : "must not be empty",
-    "rejectedValue" : ""
-  }, {
-    "objectName" : "createOrUpdate",
-    "field" : "endEventDateTime",
+    "field" : "beginEnrollmentDateTime",
     "defaultMessage" : "must not be null",
     "rejectedValue" : ""
   }, {
@@ -667,7 +656,17 @@ Content-Length: 836
     "rejectedValue" : ""
   }, {
     "objectName" : "createOrUpdate",
-    "field" : "beginEnrollmentDateTime",
+    "field" : "endEventDateTime",
+    "defaultMessage" : "must not be null",
+    "rejectedValue" : ""
+  }, {
+    "objectName" : "createOrUpdate",
+    "field" : "name",
+    "defaultMessage" : "must not be empty",
+    "rejectedValue" : ""
+  }, {
+    "objectName" : "createOrUpdate",
+    "field" : "beginEventDateTime",
     "defaultMessage" : "must not be null",
     "rejectedValue" : ""
   } ],
@@ -816,7 +815,7 @@ Content-Length: 95
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ curl 'http://localhost:8080/api/events' -i -X GET \
-    -H 'Authorization: Bearer c4922b2b-d148-47e2-8cf8-363fac748ad1'</code></pre>
+    -H 'Authorization: Bearer 5ee22ded-1b05-447b-a8c0-917d760a1dc3'</code></pre>
 </div>
 </div>
 </div>
@@ -833,12 +832,12 @@ Pragma: no-cache
 Expires: 0
 X-Frame-Options: DENY
 Link: &lt;/docs/index.html&gt;; rel="profile"
-Content-Length: 1333
+Content-Length: 1342
 
 {
   "_embedded" : {
     "eventList" : [ {
-      "id" : 16,
+      "id" : 20,
       "name" : "test event",
       "description" : "testing event apis",
       "beginEnrollmentDateTime" : "2018-10-15T00:00:00",
@@ -854,11 +853,11 @@ Content-Length: 1333
       "eventStatus" : "DRAFT",
       "manager" : null,
       "_links" : {
-        "event" : {
+        "get-events" : {
           "href" : "http://localhost:8080/api/events"
         },
         "self" : {
-          "href" : "http://localhost:8080/api/events/16"
+          "href" : "http://localhost:8080/api/events/20"
         }
       }
     } ]
@@ -867,7 +866,7 @@ Content-Length: 1333
     "self" : {
       "href" : "http://localhost:8080/api/events?page=0&amp;size=20"
     },
-    "events" : {
+    "get-events" : {
       "href" : "http://localhost:8080/api/events"
     },
     "get-an-event" : {
@@ -1004,7 +1003,7 @@ If both basePrice and maxPrice are null or 0, it means free event.</p></td>
 <div class="content">
 <pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">POST /api/events HTTP/1.1
 Content-Type: application/json;charset=UTF-8
-Authorization: Bearer 38e844dd-419e-4225-9800-e0179e6368ba
+Authorization: Bearer 4ad5f843-5ecf-4244-88e5-424bf5555da6
 Accept: application/json;charset=UTF-8
 Content-Length: 368
 Host: localhost:8080
@@ -1073,7 +1072,7 @@ Host: localhost:8080
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">HTTP/1.1 201 Created
-Location: http://localhost:8080/api/events/10
+Location: http://localhost:8080/api/events/12
 Content-Type: application/json;charset=UTF-8
 X-Content-Type-Options: nosniff
 X-XSS-Protection: 1; mode=block
@@ -1082,10 +1081,10 @@ Pragma: no-cache
 Expires: 0
 X-Frame-Options: DENY
 Link: &lt;/docs/index.html&gt;; rel="profile"
-Content-Length: 807
+Content-Length: 902
 
 {
-  "id" : 10,
+  "id" : 12,
   "name" : "test event",
   "description" : "testing event apis",
   "beginEnrollmentDateTime" : "2018-10-15T00:00:00",
@@ -1100,20 +1099,23 @@ Content-Length: 807
   "offLine" : true,
   "eventStatus" : "DRAFT",
   "manager" : {
-    "id" : 9
+    "id" : 11
   },
   "_links" : {
-    "event" : {
+    "get-events" : {
       "href" : "http://localhost:8080/api/events"
     },
     "self" : {
-      "href" : "http://localhost:8080/api/events/10"
+      "href" : "http://localhost:8080/api/events/12"
     },
     "profile" : {
       "href" : "/docs/index.html#resources-events-create"
     },
-    "update" : {
-      "href" : "http://localhost:8080/api/events/10"
+    "update-event" : {
+      "href" : "http://localhost:8080/api/events/12"
+    },
+    "delete-event" : {
+      "href" : "http://localhost:8080/api/events/12"
     }
   }
 }</code></pre>
@@ -1143,12 +1145,16 @@ Content-Length: 807
 <td class="tableblock halign-left valign-top"><p class="tableblock">Link to the created event</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>event</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>get-events</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Link to view all events</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>update</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>update-event</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Link to update the event</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>delete-event</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Link to delete the event</p></td>
 </tr>
 </tbody>
 </table>
@@ -1163,8 +1169,8 @@ Content-Length: 807
 <h4 id="resources-events-get_http_request"><a class="link" href="#resources-events-get_http_request">HTTP request</a></h4>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">GET /api/events/18 HTTP/1.1
-Authorization: Bearer a3e3faa6-a589-4d40-a628-c453abedcc28
+<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">GET /api/events/17 HTTP/1.1
+Authorization: Bearer f12f1d77-443d-4d33-b1c1-d79542b832d5
 Host: localhost:8080</code></pre>
 </div>
 </div>
@@ -1182,10 +1188,10 @@ Pragma: no-cache
 Expires: 0
 X-Frame-Options: DENY
 Link: &lt;/docs/index.html&gt;; rel="profile"
-Content-Length: 714
+Content-Length: 719
 
 {
-  "id" : 18,
+  "id" : 17,
   "name" : "test event",
   "description" : "testing event apis",
   "beginEnrollmentDateTime" : "2018-10-15T00:00:00",
@@ -1201,11 +1207,11 @@ Content-Length: 714
   "eventStatus" : "DRAFT",
   "manager" : null,
   "_links" : {
-    "event" : {
+    "get-events" : {
       "href" : "http://localhost:8080/api/events"
     },
     "self" : {
-      "href" : "http://localhost:8080/api/events/18"
+      "href" : "http://localhost:8080/api/events/17"
     },
     "profile" : {
       "href" : "/docs/index.html#resources-events-get"
@@ -1234,7 +1240,7 @@ Content-Length: 714
 <td class="tableblock halign-left valign-top"><p class="tableblock">link to this event.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>event</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>get-events</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">link to all events.</p></td>
 </tr>
 <tr>
@@ -1326,14 +1332,14 @@ If both basePrice and maxPrice are null or 0, it means free event.</p></td>
 <h4 id="resources-events-update_http_request"><a class="link" href="#resources-events-update_http_request">HTTP request</a></h4>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">PUT /api/events/8 HTTP/1.1
+<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">PUT /api/events/10 HTTP/1.1
 Content-Type: application/json;charset=UTF-8
-Authorization: Bearer fff4dc5f-42a1-4995-8d7d-f0843459da39
+Authorization: Bearer 961cc87c-8874-40c2-b8ae-b48f85f33e22
 Content-Length: 355
 Host: localhost:8080
 
 {
-  "name" : "OR5sQBsRIF",
+  "name" : "Kw6MHCh3WG",
   "description" : "testing event apis",
   "beginEnrollmentDateTime" : "2018-10-15T00:00:00",
   "closeEnrollmentDateTime" : "2018-11-03T23:59:00",
@@ -1360,11 +1366,11 @@ Pragma: no-cache
 Expires: 0
 X-Frame-Options: DENY
 Link: &lt;/docs/index.html&gt;; rel="profile"
-Content-Length: 715
+Content-Length: 805
 
 {
-  "id" : 8,
-  "name" : "OR5sQBsRIF",
+  "id" : 10,
+  "name" : "Kw6MHCh3WG",
   "description" : "testing event apis",
   "beginEnrollmentDateTime" : "2018-10-15T00:00:00",
   "closeEnrollmentDateTime" : "2018-11-03T23:59:00",
@@ -1378,14 +1384,17 @@ Content-Length: 715
   "offLine" : false,
   "eventStatus" : "DRAFT",
   "manager" : {
-    "id" : 7
+    "id" : 9
   },
   "_links" : {
-    "event" : {
+    "get-events" : {
       "href" : "http://localhost:8080/api/events"
     },
     "self" : {
-      "href" : "http://localhost:8080/api/events/8"
+      "href" : "http://localhost:8080/api/events/10"
+    },
+    "delete-event" : {
+      "href" : "http://localhost:8080/api/events/10"
     },
     "profile" : {
       "href" : "/docs/index.html#resources-events-update"
@@ -1430,21 +1439,47 @@ Content-Length: 715
 </div>
 <div class="sect3">
 <h4 id="resources-events-delete_http_request"><a class="link" href="#resources-events-delete_http_request">HTTP request</a></h4>
-<div class="paragraph">
-<p>Snippet http-request not found for operation::delete-event</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">DELETE /api/events/8 HTTP/1.1
+Content-Type: application/json;charset=UTF-8
+Authorization: Bearer 961cc87c-8874-40c2-b8ae-b48f85f33e22
+Host: localhost:8080</code></pre>
 </div>
-</div>
-<div class="sect3">
-<h4 id="resources-events-delete_http_response"><a class="link" href="#resources-events-delete_http_response">Example response</a></h4>
-<div class="paragraph">
-<p>Snippet http-response not found for operation::delete-event</p>
 </div>
 </div>
 <div class="sect3">
 <h4 id="resources-events-delete_links"><a class="link" href="#resources-events-delete_links">Links</a></h4>
-<div class="paragraph">
-<p>Snippet links not found for operation::delete-event</p>
-</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Relation</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>profile</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Link to event profile</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>self</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Link to the deleted event</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>get-events</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Link to view all events</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>create-new-event</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Link to create the event</p></td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 </div>
@@ -1452,7 +1487,7 @@ Content-Length: 715
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2020-05-03 18:31:26 +0900
+Last updated 2020-05-03 20:06:16 +0900
 </div>
 </div>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/github.min.css">

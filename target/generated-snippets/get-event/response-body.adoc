@@ -1,7 +1,7 @@
 [source,options="nowrap"]
 ----
 {
-  "id" : 18,
+  "id" : 20,
   "name" : "test event",
   "description" : "testing event apis",
   "beginEnrollmentDateTime" : "2018-10-15T00:00:00",
@@ -21,7 +21,7 @@
       "href" : "http://localhost:8080/api/events"
     },
     "self" : {
-      "href" : "http://localhost:8080/api/events/18"
+      "href" : "http://localhost:8080/api/events/20"
     },
     "profile" : {
       "href" : "/docs/index.html#resources-events-get"
