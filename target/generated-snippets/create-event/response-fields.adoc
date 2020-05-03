@@ -5,4 +5,20 @@
 |`+Number+`
 |id of new event
 
+|`+free+`
+|`+Boolean+`
+|whether free of new event
+
+|`+offLine+`
+|`+Boolean+`
+|whether offLine of new event
+
+|`+eventStatus+`
+|`+String+`
+|registration status of new event
+
+|`+manager+`
+|`+Object+`
+|registrator of new event
+
 |===

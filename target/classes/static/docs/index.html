@@ -466,9 +466,8 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <ul class="sectlevel2">
 <li><a href="#resources-events-list">이벤트 목록 조회</a>
 <ul class="sectlevel3">
-<li><a href="#resources-events-list_http_request">HTTP request</a></li>
-<li><a href="#resources-events-list_request_parameters">Request parameters</a></li>
 <li><a href="#resources-events-list_response_fields">Response fields</a></li>
+<li><a href="#resources-events-list_curl_request">Example request</a></li>
 <li><a href="#resources-events-list_http_response">Example response</a></li>
 <li><a href="#resources-events-list_links">Links</a></li>
 </ul>
@@ -484,7 +483,6 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </li>
 <li><a href="#resources-events-get">이벤트 조회</a>
 <ul class="sectlevel3">
-<li><a href="#resources-events-get_request_fields">Request fields</a></li>
 <li><a href="#resources-events-get_http_request">HTTP request</a></li>
 <li><a href="#resources-events-get_http_response">Example response</a></li>
 <li><a href="#resources-events-get_links">Links</a></li>
@@ -496,6 +494,14 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#resources-events-update_http_request">HTTP request</a></li>
 <li><a href="#resources-events-update_http_response">Example response</a></li>
 <li><a href="#resources-events-update_links">Links</a></li>
+</ul>
+</li>
+<li><a href="#resources-events-delete">이벤트 삭제</a>
+<ul class="sectlevel3">
+<li><a href="#resources-events-delete_request_fields">Request fields</a></li>
+<li><a href="#resources-events-delete_http_request">HTTP request</a></li>
+<li><a href="#resources-events-delete_http_response">Example response</a></li>
+<li><a href="#resources-events-delete_links">Links</a></li>
 </ul>
 </li>
 </ul>
@@ -581,7 +587,11 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>400 Bad Request</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">잘못된 요청을 보낸 경우. 응답 본문에 더 오류에 대한 정보가 담겨있다.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">잘못된 요청을 보낸 경우. 응답 본문에 오류에 대한 정보가 담겨있다.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>401 Unauthorized</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">클라이언트 오류 상태 응답 코드는 해당 리소스에 유효한 인증 자격 증명이 없기 때문에 요청이 적용되지 않았음을 나타냅니다.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>404 Not Found</code></p></td>
@@ -595,7 +605,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <h2 id="overview-errors"><a class="link" href="#overview-errors">오류</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>에러 응답이 발생했을 때 (상태 코드 &gt;= 400), 본문에 해당 문제를 기술한 JSON 객체가 담겨있다. 에러 객체는 다음의 구조를 따른다.</p>
+<p>에러 응답이 발생했을 때 (상태 코드 &gt;= 400), 메시지 본문에 해당 문제를 기술한 JSON 객체가 담겨있다. 에러 객체는 다음의 구조를 따른다.</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
@@ -642,6 +652,11 @@ Content-Length: 836
     "rejectedValue" : ""
   }, {
     "objectName" : "createOrUpdate",
+    "field" : "name",
+    "defaultMessage" : "must not be empty",
+    "rejectedValue" : ""
+  }, {
+    "objectName" : "createOrUpdate",
     "field" : "endEventDateTime",
     "defaultMessage" : "must not be null",
     "rejectedValue" : ""
@@ -649,11 +664,6 @@ Content-Length: 836
     "objectName" : "createOrUpdate",
     "field" : "closeEnrollmentDateTime",
     "defaultMessage" : "must not be null",
-    "rejectedValue" : ""
-  }, {
-    "objectName" : "createOrUpdate",
-    "field" : "name",
-    "defaultMessage" : "must not be empty",
     "rejectedValue" : ""
   }, {
     "objectName" : "createOrUpdate",
@@ -675,9 +685,9 @@ Content-Length: 836
 <h2 id="overview-hypermedia"><a class="link" href="#overview-hypermedia">하이퍼미디어</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>본 REST API는 하이퍼미디어와 사용하며 응답에 담겨있는 리소스는 다른 리소스에 대한 링크를 가지고 있다.
+<p>본 REST API는 하이퍼미디어를 사용하며, 응답에 담겨있는 리소스는 다른 리소스에 대한 링크를 가지고 있다.
 응답은 <a href="http://stateless.co/hal_specification.html">Hypertext Application from resource to resource. Language (HAL)</a> 형식을 따른다.
-링크는 `_links`라는 키로 제공한다. 본 API의 사용자(클라이언트)는 URI를 직접 생성하지 않아야 하며, 리소스에서 제공하는 링크를 사용해야 한다.</p>
+링크는 `_links`라는 키로 제공한다. 본 API의 사용자(클라이언트)는 URI를 직접 생성하지 않아야 하고, 리소스에서 제공하는 링크를 사용해야 한다.</p>
 </div>
 </div>
 </div>
@@ -763,41 +773,6 @@ Content-Length: 95
 <p><code>GET</code> 요청을 사용하여 서비스의 모든 이벤트를 조회할 수 있다.</p>
 </div>
 <div class="sect3">
-<h4 id="resources-events-list_http_request"><a class="link" href="#resources-events-list_http_request">HTTP request</a></h4>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">GET /api/events HTTP/1.1
-Authorization: Bearer 9140def9-0468-4cd7-90e3-15388658f230
-Host: localhost:8080</code></pre>
-</div>
-</div>
-</div>
-<div class="sect3">
-<h4 id="resources-events-list_request_parameters"><a class="link" href="#resources-events-list_request_parameters">Request parameters</a></h4>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Parameter</th>
-<th class="tableblock halign-left valign-top">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>page</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">page to retrieve, begin with and default is 0</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>size</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Sie of the page to retrieve, default 20</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect3">
 <h4 id="resources-events-list_response_fields"><a class="link" href="#resources-events-list_response_fields">Response fields</a></h4>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
@@ -835,6 +810,15 @@ Host: localhost:8080</code></pre>
 </tr>
 </tbody>
 </table>
+</div>
+<div class="sect3">
+<h4 id="resources-events-list_curl_request"><a class="link" href="#resources-events-list_curl_request">Example request</a></h4>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ curl 'http://localhost:8080/api/events' -i -X GET \
+    -H 'Authorization: Bearer c4922b2b-d148-47e2-8cf8-363fac748ad1'</code></pre>
+</div>
+</div>
 </div>
 <div class="sect3">
 <h4 id="resources-events-list_http_response"><a class="link" href="#resources-events-list_http_response">Example response</a></h4>
@@ -1020,7 +1004,7 @@ If both basePrice and maxPrice are null or 0, it means free event.</p></td>
 <div class="content">
 <pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">POST /api/events HTTP/1.1
 Content-Type: application/json;charset=UTF-8
-Authorization: Bearer b9152198-d91e-43ef-b539-be77c3287f65
+Authorization: Bearer 38e844dd-419e-4225-9800-e0179e6368ba
 Accept: application/json;charset=UTF-8
 Content-Length: 368
 Host: localhost:8080
@@ -1061,6 +1045,26 @@ Host: localhost:8080
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>Number</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">id of new event</p></td>
 </tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>free</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Boolean</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">whether free of new event</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>offLine</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Boolean</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">whether offLine of new event</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>eventStatus</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">registration status of new event</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>manager</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Object</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">registrator of new event</p></td>
+</tr>
 </tbody>
 </table>
 </div>
@@ -1069,7 +1073,7 @@ Host: localhost:8080
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">HTTP/1.1 201 Created
-Location: http://localhost:8080/api/events/11
+Location: http://localhost:8080/api/events/10
 Content-Type: application/json;charset=UTF-8
 X-Content-Type-Options: nosniff
 X-XSS-Protection: 1; mode=block
@@ -1078,10 +1082,10 @@ Pragma: no-cache
 Expires: 0
 X-Frame-Options: DENY
 Link: &lt;/docs/index.html&gt;; rel="profile"
-Content-Length: 808
+Content-Length: 807
 
 {
-  "id" : 11,
+  "id" : 10,
   "name" : "test event",
   "description" : "testing event apis",
   "beginEnrollmentDateTime" : "2018-10-15T00:00:00",
@@ -1096,20 +1100,20 @@ Content-Length: 808
   "offLine" : true,
   "eventStatus" : "DRAFT",
   "manager" : {
-    "id" : 10
+    "id" : 9
   },
   "_links" : {
     "event" : {
       "href" : "http://localhost:8080/api/events"
     },
     "self" : {
-      "href" : "http://localhost:8080/api/events/11"
+      "href" : "http://localhost:8080/api/events/10"
     },
     "profile" : {
       "href" : "/docs/index.html#resources-events-create"
     },
     "update" : {
-      "href" : "http://localhost:8080/api/events/11"
+      "href" : "http://localhost:8080/api/events/10"
     }
   }
 }</code></pre>
@@ -1156,15 +1160,11 @@ Content-Length: 808
 <p><code>Get</code> 요청을 사용해서 기존 이벤트 하나를 조회할 수 있다.</p>
 </div>
 <div class="sect3">
-<h4 id="resources-events-get_request_fields"><a class="link" href="#resources-events-get_request_fields">Request fields</a></h4>
-
-</div>
-<div class="sect3">
 <h4 id="resources-events-get_http_request"><a class="link" href="#resources-events-get_http_request">HTTP request</a></h4>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">GET /api/events/18 HTTP/1.1
-Authorization: Bearer 73f9f636-d3d8-42a6-835c-2b99e7b5cf97
+Authorization: Bearer a3e3faa6-a589-4d40-a628-c453abedcc28
 Host: localhost:8080</code></pre>
 </div>
 </div>
@@ -1326,14 +1326,14 @@ If both basePrice and maxPrice are null or 0, it means free event.</p></td>
 <h4 id="resources-events-update_http_request"><a class="link" href="#resources-events-update_http_request">HTTP request</a></h4>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">PUT /api/events/9 HTTP/1.1
+<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">PUT /api/events/8 HTTP/1.1
 Content-Type: application/json;charset=UTF-8
-Authorization: Bearer 93f0b914-d218-445c-ba9b-509b67eaeee5
+Authorization: Bearer fff4dc5f-42a1-4995-8d7d-f0843459da39
 Content-Length: 355
 Host: localhost:8080
 
 {
-  "name" : "2a9MhvBSP0",
+  "name" : "OR5sQBsRIF",
   "description" : "testing event apis",
   "beginEnrollmentDateTime" : "2018-10-15T00:00:00",
   "closeEnrollmentDateTime" : "2018-11-03T23:59:00",
@@ -1363,8 +1363,8 @@ Link: &lt;/docs/index.html&gt;; rel="profile"
 Content-Length: 715
 
 {
-  "id" : 9,
-  "name" : "2a9MhvBSP0",
+  "id" : 8,
+  "name" : "OR5sQBsRIF",
   "description" : "testing event apis",
   "beginEnrollmentDateTime" : "2018-10-15T00:00:00",
   "closeEnrollmentDateTime" : "2018-11-03T23:59:00",
@@ -1378,14 +1378,14 @@ Content-Length: 715
   "offLine" : false,
   "eventStatus" : "DRAFT",
   "manager" : {
-    "id" : 8
+    "id" : 7
   },
   "_links" : {
     "event" : {
       "href" : "http://localhost:8080/api/events"
     },
     "self" : {
-      "href" : "http://localhost:8080/api/events/9"
+      "href" : "http://localhost:8080/api/events/8"
     },
     "profile" : {
       "href" : "/docs/index.html#resources-events-update"
@@ -1417,12 +1417,42 @@ Content-Length: 715
 </table>
 </div>
 </div>
+<div class="sect2">
+<h3 id="resources-events-delete"><a class="link" href="#resources-events-delete">이벤트 삭제</a></h3>
+<div class="paragraph">
+<p><code>DELETE</code> 요청을 사용해서 기존 이벤트를 삭제할 수 있다.</p>
+</div>
+<div class="sect3">
+<h4 id="resources-events-delete_request_fields"><a class="link" href="#resources-events-delete_request_fields">Request fields</a></h4>
+<div class="paragraph">
+<p>Snippet request-fields not found for operation::delete-event</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="resources-events-delete_http_request"><a class="link" href="#resources-events-delete_http_request">HTTP request</a></h4>
+<div class="paragraph">
+<p>Snippet http-request not found for operation::delete-event</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="resources-events-delete_http_response"><a class="link" href="#resources-events-delete_http_response">Example response</a></h4>
+<div class="paragraph">
+<p>Snippet http-response not found for operation::delete-event</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="resources-events-delete_links"><a class="link" href="#resources-events-delete_links">Links</a></h4>
+<div class="paragraph">
+<p>Snippet links not found for operation::delete-event</p>
+</div>
+</div>
+</div>
 </div>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2020-05-02 22:11:17 +0900
+Last updated 2020-05-03 18:31:26 +0900
 </div>
 </div>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/github.min.css">
