@@ -14,8 +14,8 @@ Content-Length: 836
 {
   "content" : [ {
     "objectName" : "createOrUpdate",
-    "field" : "beginEventDateTime",
-    "defaultMessage" : "must not be null",
+    "field" : "name",
+    "defaultMessage" : "must not be empty",
     "rejectedValue" : ""
   }, {
     "objectName" : "createOrUpdate",
@@ -24,13 +24,13 @@ Content-Length: 836
     "rejectedValue" : ""
   }, {
     "objectName" : "createOrUpdate",
-    "field" : "closeEnrollmentDateTime",
+    "field" : "beginEventDateTime",
     "defaultMessage" : "must not be null",
     "rejectedValue" : ""
   }, {
     "objectName" : "createOrUpdate",
-    "field" : "name",
-    "defaultMessage" : "must not be empty",
+    "field" : "closeEnrollmentDateTime",
+    "defaultMessage" : "must not be null",
     "rejectedValue" : ""
   }, {
     "objectName" : "createOrUpdate",

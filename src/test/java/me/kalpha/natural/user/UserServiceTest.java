@@ -10,6 +10,8 @@ import java.util.Optional;
 import java.util.Set;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.mockito.ArgumentMatchers.anyString;
 
 public class UserServiceTest {
@@ -51,4 +53,22 @@ public class UserServiceTest {
 //        userService.loadUserByUsername("keesun@email.com");
 //    }
 
+    @Test
+    public void usernameNotfoundException() {
+        // Given
+        var userRepository = Mockito.mock(UserRepository.class);
+        var userService = new UserService();
+        userService.userRepository = userRepository;
+        Mockito.when(userRepository.findByEmailIgnoreCase(anyString())).thenReturn(Optional.empty());
+
+        // When
+        Exception exception = assertThrows(
+                UsernameNotFoundException.class,
+                () -> userService.loadUserByUsername("keesun@email.com")
+        );
+        System.out.println(exception.getMessage());
+
+        //Then
+        //assertTrue(exception.getMessage().contains("UsernameNotFoundException"));
+    }
 }

@@ -1,7 +1,7 @@
 [source,options="nowrap"]
 ----
 {
-  "name" : "2a9MhvBSP0",
+  "name" : "wJvq55vCz5",
   "description" : "testing event apis",
   "beginEnrollmentDateTime" : "2018-10-15T00:00:00",
   "closeEnrollmentDateTime" : "2018-11-03T23:59:00",
