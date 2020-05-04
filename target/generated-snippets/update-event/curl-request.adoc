@@ -2,9 +2,9 @@
 ----
 $ curl 'http://localhost:8080/api/events/10' -i -X PUT \
     -H 'Content-Type: application/json;charset=UTF-8' \
-    -H 'Authorization: Bearer 961cc87c-8874-40c2-b8ae-b48f85f33e22' \
+    -H 'Authorization: Bearer ffa4cf0b-1b6c-4dad-825a-71d3405e41c9' \
     -d '{
-  "name" : "Kw6MHCh3WG",
+  "name" : "9dLcVBpiKo",
   "description" : "testing event apis",
   "beginEnrollmentDateTime" : "2018-10-15T00:00:00",
   "closeEnrollmentDateTime" : "2018-11-03T23:59:00",

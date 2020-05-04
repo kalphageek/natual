@@ -1,6 +1,6 @@
 package me.kalpha.natural.event;
 
-import me.kalpha.natural.common.Description;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.validation.BeanPropertyBindingResult;
 import org.springframework.validation.Errors;
@@ -11,7 +11,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 public class EventValidatorTest {
 
-    @Description("Validate valid event")
+    @DisplayName("Validate valid event")
     @Test
     public void testValidation() {
         // Given
@@ -31,7 +31,7 @@ public class EventValidatorTest {
         assertThat(errors.hasErrors()).isFalse();
     }
 
-    @Description("Validate invalid event")
+    @DisplayName("Validate invalid event")
     @Test
     public void testValidationFail() {
         // Given

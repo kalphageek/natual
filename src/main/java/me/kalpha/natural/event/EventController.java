@@ -49,8 +49,6 @@ public class EventController {
 
         Page<Event> events = eventRepository.findAll(pageable);
         var pagedModel = assembler.toModel(events, e -> new EventModel(e));
-        pagedModel.add(linkTo(EventController.class).withRel("get-events"));
-        pagedModel.add(linkTo(methodOn(EventController.class).get(null, null)).withRel("get-an-event"));
         if (currentUser != null) {
             pagedModel.add(linkTo(methodOn(EventController.class).create(null, null, null)).withRel("create-new-event"));
         }
@@ -67,6 +65,8 @@ public class EventController {
 
         Event event = byId.get();
         EventModel eventModel = new EventModel(event);
+
+        eventModel.add(linkTo(EventController.class).withRel("get-events"));
         if (currentUser != null && currentUser.equals(event.getManager())) {
             eventModel.add(linkToUpdate(event));
             eventModel.add(linkToDelete(event));
@@ -93,6 +93,7 @@ public class EventController {
 
         Event newEvent = eventRepository.save(event);
         EventModel eventModel = new EventModel(newEvent);
+        eventModel.add(linkTo(EventController.class).withRel("get-events"));
         eventModel.add(linkToProfile("resources-events-create"));
         eventModel.add(linkToUpdate(newEvent));
         eventModel.add(linkToDelete(newEvent));
@@ -116,7 +117,7 @@ public class EventController {
         }
 
         Event event = byId.get();
-        if (currentUser != null && !currentUser.equals(event.getManager())) {
+        if (!currentUser.equals(event.getManager()) && !currentUser.getRoles().contains(UserRole.ADMIN)) {
             return new ResponseEntity(HttpStatus.FORBIDDEN);
         }
 
@@ -127,8 +128,10 @@ public class EventController {
         if (errors.hasErrors()) {
             return badRequestResponse(errors);
         }
+        eventRepository.save(event);
 
         EventModel eventModel = new EventModel(event);
+        eventModel.add(linkTo(EventController.class).withRel("get-events"));
         eventModel.add(linkToDelete(event));
         eventModel.add(linkToProfile("resources-events-update"));
         return ResponseEntity.ok().body(eventModel);
@@ -144,7 +147,7 @@ public class EventController {
         }
 
         Event event = byId.get();
-        if (currentUser != null && !currentUser.equals(event.getManager())) {
+        if (!currentUser.equals(event.getManager()) && !currentUser.getRoles().contains(UserRole.ADMIN)) {
             return new ResponseEntity(HttpStatus.FORBIDDEN);
         }
 

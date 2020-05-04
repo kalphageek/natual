@@ -4,31 +4,30 @@
     <list default="true" id="9819c143-c0ef-4bd8-b9cb-1197330f4632" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/asciidoc/index.adoc" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/asciidoc/index.adoc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/kalpha/natural/configs/ResourceServerConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/kalpha/natural/configs/ResourceServerConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/me/kalpha/natural/event/EventController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/kalpha/natural/event/EventController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/me/kalpha/natural/event/EventModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/kalpha/natural/event/EventModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/me/kalpha/natural/event/EventControllerTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/me/kalpha/natural/event/EventControllerTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/me/kalpha/natural/event/EventValidatorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/me/kalpha/natural/event/EventValidatorTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/me/kalpha/natural/index/IndexControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/me/kalpha/natural/index/IndexControllerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/me/kalpha/natural/security/OAuth2ServerConfigTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/me/kalpha/natural/security/OAuth2ServerConfigTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/me/kalpha/natural/user/UserRepositoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/me/kalpha/natural/user/UserRepositoryTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/me/kalpha/natural/user/UserServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/me/kalpha/natural/user/UserServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/me/kalpha/natural/configs/ResourceServerConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/me/kalpha/natural/configs/ResourceServerConfig.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/me/kalpha/natural/event/EventController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/me/kalpha/natural/event/EventController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/docs/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/docs/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/generated-snippets/create-event/curl-request.adoc" beforeDir="false" afterPath="$PROJECT_DIR$/target/generated-snippets/create-event/curl-request.adoc" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/generated-snippets/create-event/http-request.adoc" beforeDir="false" afterPath="$PROJECT_DIR$/target/generated-snippets/create-event/http-request.adoc" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/generated-snippets/create-event/http-response.adoc" beforeDir="false" afterPath="$PROJECT_DIR$/target/generated-snippets/create-event/http-response.adoc" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/generated-snippets/create-event/httpie-request.adoc" beforeDir="false" afterPath="$PROJECT_DIR$/target/generated-snippets/create-event/httpie-request.adoc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/generated-snippets/create-event/links.adoc" beforeDir="false" afterPath="$PROJECT_DIR$/target/generated-snippets/create-event/links.adoc" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/generated-snippets/create-event/response-body.adoc" beforeDir="false" afterPath="$PROJECT_DIR$/target/generated-snippets/create-event/response-body.adoc" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/generated-snippets/errors/curl-request.adoc" beforeDir="false" afterPath="$PROJECT_DIR$/target/generated-snippets/errors/curl-request.adoc" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/generated-snippets/errors/http-request.adoc" beforeDir="false" afterPath="$PROJECT_DIR$/target/generated-snippets/errors/http-request.adoc" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/generated-snippets/errors/http-response.adoc" beforeDir="false" afterPath="$PROJECT_DIR$/target/generated-snippets/errors/http-response.adoc" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/generated-snippets/errors/httpie-request.adoc" beforeDir="false" afterPath="$PROJECT_DIR$/target/generated-snippets/errors/httpie-request.adoc" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/generated-snippets/errors/response-body.adoc" beforeDir="false" afterPath="$PROJECT_DIR$/target/generated-snippets/errors/response-body.adoc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/generated-snippets/get-event/curl-request.adoc" beforeDir="false" afterPath="$PROJECT_DIR$/target/generated-snippets/get-event/curl-request.adoc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/generated-snippets/get-event/http-request.adoc" beforeDir="false" afterPath="$PROJECT_DIR$/target/generated-snippets/get-event/http-request.adoc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/generated-snippets/get-event/http-response.adoc" beforeDir="false" afterPath="$PROJECT_DIR$/target/generated-snippets/get-event/http-response.adoc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/generated-snippets/get-event/httpie-request.adoc" beforeDir="false" afterPath="$PROJECT_DIR$/target/generated-snippets/get-event/httpie-request.adoc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/generated-snippets/get-event/response-body.adoc" beforeDir="false" afterPath="$PROJECT_DIR$/target/generated-snippets/get-event/response-body.adoc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/generated-snippets/get-events/curl-request.adoc" beforeDir="false" afterPath="$PROJECT_DIR$/target/generated-snippets/get-events/curl-request.adoc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/generated-snippets/get-events/http-request.adoc" beforeDir="false" afterPath="$PROJECT_DIR$/target/generated-snippets/get-events/http-request.adoc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/generated-snippets/get-events/http-response.adoc" beforeDir="false" afterPath="$PROJECT_DIR$/target/generated-snippets/get-events/http-response.adoc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/generated-snippets/get-events/httpie-request.adoc" beforeDir="false" afterPath="$PROJECT_DIR$/target/generated-snippets/get-events/httpie-request.adoc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/generated-snippets/get-events/response-body.adoc" beforeDir="false" afterPath="$PROJECT_DIR$/target/generated-snippets/get-events/response-body.adoc" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/generated-snippets/update-event/curl-request.adoc" beforeDir="false" afterPath="$PROJECT_DIR$/target/generated-snippets/update-event/curl-request.adoc" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/generated-snippets/update-event/http-request.adoc" beforeDir="false" afterPath="$PROJECT_DIR$/target/generated-snippets/update-event/http-request.adoc" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/generated-snippets/update-event/http-response.adoc" beforeDir="false" afterPath="$PROJECT_DIR$/target/generated-snippets/update-event/http-response.adoc" afterDir="false" />
@@ -36,6 +35,11 @@
       <change beforePath="$PROJECT_DIR$/target/generated-snippets/update-event/request-body.adoc" beforeDir="false" afterPath="$PROJECT_DIR$/target/generated-snippets/update-event/request-body.adoc" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/generated-snippets/update-event/response-body.adoc" beforeDir="false" afterPath="$PROJECT_DIR$/target/generated-snippets/update-event/response-body.adoc" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/test-classes/me/kalpha/natural/event/EventControllerTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/me/kalpha/natural/event/EventControllerTests.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/me/kalpha/natural/event/EventValidatorTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/me/kalpha/natural/event/EventValidatorTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/me/kalpha/natural/index/IndexControllerTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/me/kalpha/natural/index/IndexControllerTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/me/kalpha/natural/security/OAuth2ServerConfigTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/me/kalpha/natural/security/OAuth2ServerConfigTests.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/me/kalpha/natural/user/UserRepositoryTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/me/kalpha/natural/user/UserRepositoryTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/me/kalpha/natural/user/UserServiceTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/me/kalpha/natural/user/UserServiceTest.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,7 +76,7 @@
       <recent name="$PROJECT_DIR$/src/main/asciidoc" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.NaturalApplication">
+  <component name="RunManager" selected="JUnit.EventControllerTests">
     <configuration name="NaturalApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="me.kalpha.natural.NaturalApplication" />
       <module name="natural" />
@@ -117,17 +121,17 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="EventControllerTests.getEventAsAManager" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="EventControllerTests.getEvents" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="natural" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="me.kalpha.natural.event.*" />
+          <option name="PATTERN" value="me.kalpha.natural.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="me.kalpha.natural.event" />
       <option name="MAIN_CLASS_NAME" value="me.kalpha.natural.event.EventControllerTests" />
-      <option name="METHOD_NAME" value="getEventAsAManager" />
+      <option name="METHOD_NAME" value="getEvents" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -147,60 +151,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="JetRunConfigurationType">
-      <module name="natural" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="WORKING_DIRECTORY" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
-      <module name="natural" />
-      <option name="filePath" />
-      <option name="vmParameters" />
-      <option name="alternativeJrePath" />
-      <option name="programParameters" />
-      <option name="passParentEnvs" value="true" />
-      <option name="workingDirectory" />
-      <option name="isAlternativeJrePathEnabled" value="false" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="WORKING_DIRECTORY" />
-      <option name="filePath" />
-      <option name="vmParameters" />
-      <option name="alternativeJrePath" />
-      <option name="programParameters" />
-      <option name="passParentEnvs" value="true" />
-      <option name="workingDirectory" />
-      <option name="isAlternativeJrePathEnabled" value="false" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="WORKING_DIRECTORY" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.NaturalApplication" />
-        <item itemvalue="JUnit.me.kalpha.natural in natural" />
-        <item itemvalue="JUnit.EventControllerTests.deleteEvent" />
-        <item itemvalue="JUnit.EventControllerTests.getEventAsAManager" />
         <item itemvalue="JUnit.EventControllerTests" />
+        <item itemvalue="JUnit.EventControllerTests.getEvents" />
+        <item itemvalue="JUnit.me.kalpha.natural in natural" />
+        <item itemvalue="Application.NaturalApplication" />
+        <item itemvalue="JUnit.EventControllerTests.deleteEvent" />
       </list>
     </recent_temporary>
   </component>
@@ -233,38 +190,38 @@
       <screen x="0" y="27" width="1368" height="741" />
     </state>
     <state x="217" y="55" width="924" height="691" key="DBNavigator.ProjectSettingsDialog/0.27.1368.741@0.27.1368.741" timestamp="1588422657561" />
-    <state width="1320" height="180" key="GridCell.Tab.0.bottom" timestamp="1588504805107">
+    <state width="1320" height="180" key="GridCell.Tab.0.bottom" timestamp="1588594781929">
       <screen x="0" y="27" width="1368" height="741" />
     </state>
-    <state width="1320" height="180" key="GridCell.Tab.0.bottom/0.27.1368.741@0.27.1368.741" timestamp="1588504805107" />
-    <state width="1320" height="180" key="GridCell.Tab.0.center" timestamp="1588504805106">
+    <state width="1320" height="180" key="GridCell.Tab.0.bottom/0.27.1368.741@0.27.1368.741" timestamp="1588594781929" />
+    <state width="1320" height="180" key="GridCell.Tab.0.center" timestamp="1588594781926">
       <screen x="0" y="27" width="1368" height="741" />
     </state>
-    <state width="1320" height="180" key="GridCell.Tab.0.center/0.27.1368.741@0.27.1368.741" timestamp="1588504805106" />
-    <state width="1320" height="180" key="GridCell.Tab.0.left" timestamp="1588504805105">
+    <state width="1320" height="180" key="GridCell.Tab.0.center/0.27.1368.741@0.27.1368.741" timestamp="1588594781926" />
+    <state width="1320" height="180" key="GridCell.Tab.0.left" timestamp="1588594781923">
       <screen x="0" y="27" width="1368" height="741" />
     </state>
-    <state width="1320" height="180" key="GridCell.Tab.0.left/0.27.1368.741@0.27.1368.741" timestamp="1588504805105" />
-    <state width="1320" height="180" key="GridCell.Tab.0.right" timestamp="1588504805106">
+    <state width="1320" height="180" key="GridCell.Tab.0.left/0.27.1368.741@0.27.1368.741" timestamp="1588594781923" />
+    <state width="1320" height="180" key="GridCell.Tab.0.right" timestamp="1588594781928">
       <screen x="0" y="27" width="1368" height="741" />
     </state>
-    <state width="1320" height="180" key="GridCell.Tab.0.right/0.27.1368.741@0.27.1368.741" timestamp="1588504805106" />
-    <state width="1320" height="214" key="GridCell.Tab.1.bottom" timestamp="1588502640148">
+    <state width="1320" height="180" key="GridCell.Tab.0.right/0.27.1368.741@0.27.1368.741" timestamp="1588594781928" />
+    <state width="1320" height="214" key="GridCell.Tab.1.bottom" timestamp="1588509218852">
       <screen x="0" y="27" width="1368" height="741" />
     </state>
-    <state width="1320" height="214" key="GridCell.Tab.1.bottom/0.27.1368.741@0.27.1368.741" timestamp="1588502640148" />
-    <state width="1320" height="214" key="GridCell.Tab.1.center" timestamp="1588502640147">
+    <state width="1320" height="214" key="GridCell.Tab.1.bottom/0.27.1368.741@0.27.1368.741" timestamp="1588509218852" />
+    <state width="1320" height="214" key="GridCell.Tab.1.center" timestamp="1588509218852">
       <screen x="0" y="27" width="1368" height="741" />
     </state>
-    <state width="1320" height="214" key="GridCell.Tab.1.center/0.27.1368.741@0.27.1368.741" timestamp="1588502640147" />
-    <state width="1320" height="214" key="GridCell.Tab.1.left" timestamp="1588502640146">
+    <state width="1320" height="214" key="GridCell.Tab.1.center/0.27.1368.741@0.27.1368.741" timestamp="1588509218852" />
+    <state width="1320" height="214" key="GridCell.Tab.1.left" timestamp="1588509218851">
       <screen x="0" y="27" width="1368" height="741" />
     </state>
-    <state width="1320" height="214" key="GridCell.Tab.1.left/0.27.1368.741@0.27.1368.741" timestamp="1588502640146" />
-    <state width="1320" height="214" key="GridCell.Tab.1.right" timestamp="1588502640147">
+    <state width="1320" height="214" key="GridCell.Tab.1.left/0.27.1368.741@0.27.1368.741" timestamp="1588509218851" />
+    <state width="1320" height="214" key="GridCell.Tab.1.right" timestamp="1588509218852">
       <screen x="0" y="27" width="1368" height="741" />
     </state>
-    <state width="1320" height="214" key="GridCell.Tab.1.right/0.27.1368.741@0.27.1368.741" timestamp="1588502640147" />
+    <state width="1320" height="214" key="GridCell.Tab.1.right/0.27.1368.741@0.27.1368.741" timestamp="1588509218852" />
     <state x="380" y="89" width="723" height="616" key="find.popup" timestamp="1588500844948">
       <screen x="0" y="27" width="1368" height="741" />
     </state>

@@ -1,6 +1,6 @@
 package me.kalpha.natural.user;
 
-import me.kalpha.natural.common.Description;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 import org.springframework.security.core.GrantedAuthority;
@@ -16,7 +16,7 @@ import static org.mockito.ArgumentMatchers.anyString;
 
 public class UserServiceTest {
 
-    @Description("Load existing user")
+    @DisplayName("Load existing user")
     @Test
     public void loadUserByUsername() {
         // Given
@@ -64,9 +64,8 @@ public class UserServiceTest {
         // When
         Exception exception = assertThrows(
                 UsernameNotFoundException.class,
-                () -> userService.loadUserByUsername("keesun@email.com")
+                () -> userService.loadUserByUsername("admin@email.com")
         );
-        System.out.println(exception.getMessage());
 
         //Then
         //assertTrue(exception.getMessage().contains("UsernameNotFoundException"));

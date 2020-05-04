@@ -9,7 +9,7 @@ Pragma: no-cache
 Expires: 0
 X-Frame-Options: DENY
 Link: </docs/index.html>; rel="profile"
-Content-Length: 1342
+Content-Length: 1063
 
 {
   "_embedded" : {
@@ -30,9 +30,6 @@ Content-Length: 1342
       "eventStatus" : "DRAFT",
       "manager" : null,
       "_links" : {
-        "get-events" : {
-          "href" : "http://localhost:8080/api/events"
-        },
         "self" : {
           "href" : "http://localhost:8080/api/events/20"
         }
@@ -42,13 +39,6 @@ Content-Length: 1342
   "_links" : {
     "self" : {
       "href" : "http://localhost:8080/api/events?page=0&size=20"
-    },
-    "get-events" : {
-      "href" : "http://localhost:8080/api/events"
-    },
-    "get-an-event" : {
-      "href" : "http://localhost:8080/api/events/{id}",
-      "templated" : true
     },
     "create-new-event" : {
       "href" : "http://localhost:8080/api/events"

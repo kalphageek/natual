@@ -13,7 +13,7 @@ Content-Length: 805
 
 {
   "id" : 10,
-  "name" : "Kw6MHCh3WG",
+  "name" : "9dLcVBpiKo",
   "description" : "testing event apis",
   "beginEnrollmentDateTime" : "2018-10-15T00:00:00",
   "closeEnrollmentDateTime" : "2018-11-03T23:59:00",
@@ -30,11 +30,11 @@ Content-Length: 805
     "id" : 9
   },
   "_links" : {
-    "get-events" : {
-      "href" : "http://localhost:8080/api/events"
-    },
     "self" : {
       "href" : "http://localhost:8080/api/events/10"
+    },
+    "get-events" : {
+      "href" : "http://localhost:8080/api/events"
     },
     "delete-event" : {
       "href" : "http://localhost:8080/api/events/10"

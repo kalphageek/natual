@@ -134,4 +134,4 @@ operation::update-event[snippets='request-fields,http-request,http-response,link
 
 `DELETE` 요청을 사용해서 기존 이벤트를 삭제할 수 있다.
 
-operation::delete-event[snippets='request-fields,http-request,links']
+operation::delete-event[snippets='request-fields,http-request,http-response,links']

@@ -1,7 +1,7 @@
 package me.kalpha.natural.user;
 
-import me.kalpha.natural.common.Description;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
@@ -22,7 +22,7 @@ public class UserRepositoryTest {
         userRepository.deleteAll();
     }
 
-    @Description("Save new user and check generated id")
+    @DisplayName("Save new user and check generated id")
     @Test
     public void saveUser() {
         // When
@@ -42,7 +42,7 @@ public class UserRepositoryTest {
                     .build();
     }
 
-    @Description("Find existing use by email")
+    @DisplayName("Find existing use by email")
     @Test
     public void findByEmail() {
         // Given

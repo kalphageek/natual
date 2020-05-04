@@ -12,7 +12,7 @@ public class EventModel extends EntityModel<Event> {
 
     public EventModel(Event event, Link... links) {
         super(event, links);
-        add(linkTo(EventController.class).withRel("get-events"));
+        //add(linkTo(EventController.class).withRel("get-events"));
         //add(linkTo(EventController.class).slash(event.getId()).withSelfRel());
         add(linkTo(methodOn(EventController.class).get(event.getId(), null)).withSelfRel());
     }

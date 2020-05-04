@@ -56,7 +56,7 @@ public class OAuth2ServerConfigTests {
         mockMvc.perform(post("/oauth/token")
                     .params(params)
                     .with(httpBasic(appSecurityProperties.getDefaultClientId(), appSecurityProperties.getDefaultClientSecret()))
-                    .accept(MediaType.APPLICATION_JSON_UTF8))
+                    .accept(MediaType.APPLICATION_JSON))
                 .andDo(print())
                 .andExpect(status().isOk())
                 .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8))

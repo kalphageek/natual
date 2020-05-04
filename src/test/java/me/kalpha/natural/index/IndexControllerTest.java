@@ -10,10 +10,9 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 public class IndexControllerTest extends BaseControllerTests {
-
     @Test
     public void root() throws Exception {
-        this.mockMvc.perform(get("/api/"))
+        this.mockMvc.perform(get("/api"))
                 .andExpect(status().isOk())
                 .andDo(document("index",
                         links(

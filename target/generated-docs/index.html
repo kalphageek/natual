@@ -500,6 +500,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <ul class="sectlevel3">
 <li><a href="#resources-events-delete_request_fields">Request fields</a></li>
 <li><a href="#resources-events-delete_http_request">HTTP request</a></li>
+<li><a href="#resources-events-delete_http_response">Example response</a></li>
 <li><a href="#resources-events-delete_links">Links</a></li>
 </ul>
 </li>
@@ -646,17 +647,17 @@ Content-Length: 836
 {
   "content" : [ {
     "objectName" : "createOrUpdate",
-    "field" : "beginEnrollmentDateTime",
-    "defaultMessage" : "must not be null",
-    "rejectedValue" : ""
-  }, {
-    "objectName" : "createOrUpdate",
     "field" : "closeEnrollmentDateTime",
     "defaultMessage" : "must not be null",
     "rejectedValue" : ""
   }, {
     "objectName" : "createOrUpdate",
-    "field" : "endEventDateTime",
+    "field" : "beginEnrollmentDateTime",
+    "defaultMessage" : "must not be null",
+    "rejectedValue" : ""
+  }, {
+    "objectName" : "createOrUpdate",
+    "field" : "beginEventDateTime",
     "defaultMessage" : "must not be null",
     "rejectedValue" : ""
   }, {
@@ -666,7 +667,7 @@ Content-Length: 836
     "rejectedValue" : ""
   }, {
     "objectName" : "createOrUpdate",
-    "field" : "beginEventDateTime",
+    "field" : "endEventDateTime",
     "defaultMessage" : "must not be null",
     "rejectedValue" : ""
   } ],
@@ -706,7 +707,7 @@ Content-Length: 836
 <h4 id="resources-index-access_http_request"><a class="link" href="#resources-index-access_http_request">HTTP request</a></h4>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">GET /api/ HTTP/1.1
+<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">GET /api HTTP/1.1
 Host: localhost:8080</code></pre>
 </div>
 </div>
@@ -815,7 +816,7 @@ Content-Length: 95
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ curl 'http://localhost:8080/api/events' -i -X GET \
-    -H 'Authorization: Bearer 5ee22ded-1b05-447b-a8c0-917d760a1dc3'</code></pre>
+    -H 'Authorization: Bearer 4c185b6c-9ea6-41b7-92ec-eabf8a5baec8'</code></pre>
 </div>
 </div>
 </div>
@@ -832,7 +833,7 @@ Pragma: no-cache
 Expires: 0
 X-Frame-Options: DENY
 Link: &lt;/docs/index.html&gt;; rel="profile"
-Content-Length: 1342
+Content-Length: 1063
 
 {
   "_embedded" : {
@@ -853,9 +854,6 @@ Content-Length: 1342
       "eventStatus" : "DRAFT",
       "manager" : null,
       "_links" : {
-        "get-events" : {
-          "href" : "http://localhost:8080/api/events"
-        },
         "self" : {
           "href" : "http://localhost:8080/api/events/20"
         }
@@ -865,13 +863,6 @@ Content-Length: 1342
   "_links" : {
     "self" : {
       "href" : "http://localhost:8080/api/events?page=0&amp;size=20"
-    },
-    "get-events" : {
-      "href" : "http://localhost:8080/api/events"
-    },
-    "get-an-event" : {
-      "href" : "http://localhost:8080/api/events/{id}",
-      "templated" : true
     },
     "create-new-event" : {
       "href" : "http://localhost:8080/api/events"
@@ -911,10 +902,6 @@ Content-Length: 1342
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>self</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Link to self</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>get-an-event</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Link to get an event</p></td>
 </tr>
 </tbody>
 </table>
@@ -1003,8 +990,8 @@ If both basePrice and maxPrice are null or 0, it means free event.</p></td>
 <div class="content">
 <pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">POST /api/events HTTP/1.1
 Content-Type: application/json;charset=UTF-8
-Authorization: Bearer 4ad5f843-5ecf-4244-88e5-424bf5555da6
-Accept: application/json;charset=UTF-8
+Authorization: Bearer e055c9e0-d0a7-47e1-8ef8-4f3d349d1da8
+Accept: application/json
 Content-Length: 368
 Host: localhost:8080
 
@@ -1073,7 +1060,7 @@ Host: localhost:8080
 <div class="content">
 <pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">HTTP/1.1 201 Created
 Location: http://localhost:8080/api/events/12
-Content-Type: application/json;charset=UTF-8
+Content-Type: application/json
 X-Content-Type-Options: nosniff
 X-XSS-Protection: 1; mode=block
 Cache-Control: no-cache, no-store, max-age=0, must-revalidate
@@ -1102,11 +1089,11 @@ Content-Length: 902
     "id" : 11
   },
   "_links" : {
-    "get-events" : {
-      "href" : "http://localhost:8080/api/events"
-    },
     "self" : {
       "href" : "http://localhost:8080/api/events/12"
+    },
+    "get-events" : {
+      "href" : "http://localhost:8080/api/events"
     },
     "profile" : {
       "href" : "/docs/index.html#resources-events-create"
@@ -1170,7 +1157,7 @@ Content-Length: 902
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">GET /api/events/17 HTTP/1.1
-Authorization: Bearer f12f1d77-443d-4d33-b1c1-d79542b832d5
+Authorization: Bearer f25126f9-f388-4b94-af68-8c6ef59f86e5
 Host: localhost:8080</code></pre>
 </div>
 </div>
@@ -1207,11 +1194,11 @@ Content-Length: 719
   "eventStatus" : "DRAFT",
   "manager" : null,
   "_links" : {
-    "get-events" : {
-      "href" : "http://localhost:8080/api/events"
-    },
     "self" : {
       "href" : "http://localhost:8080/api/events/17"
+    },
+    "get-events" : {
+      "href" : "http://localhost:8080/api/events"
     },
     "profile" : {
       "href" : "/docs/index.html#resources-events-get"
@@ -1334,12 +1321,12 @@ If both basePrice and maxPrice are null or 0, it means free event.</p></td>
 <div class="content">
 <pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">PUT /api/events/10 HTTP/1.1
 Content-Type: application/json;charset=UTF-8
-Authorization: Bearer 961cc87c-8874-40c2-b8ae-b48f85f33e22
+Authorization: Bearer ffa4cf0b-1b6c-4dad-825a-71d3405e41c9
 Content-Length: 355
 Host: localhost:8080
 
 {
-  "name" : "Kw6MHCh3WG",
+  "name" : "9dLcVBpiKo",
   "description" : "testing event apis",
   "beginEnrollmentDateTime" : "2018-10-15T00:00:00",
   "closeEnrollmentDateTime" : "2018-11-03T23:59:00",
@@ -1370,7 +1357,7 @@ Content-Length: 805
 
 {
   "id" : 10,
-  "name" : "Kw6MHCh3WG",
+  "name" : "9dLcVBpiKo",
   "description" : "testing event apis",
   "beginEnrollmentDateTime" : "2018-10-15T00:00:00",
   "closeEnrollmentDateTime" : "2018-11-03T23:59:00",
@@ -1387,11 +1374,11 @@ Content-Length: 805
     "id" : 9
   },
   "_links" : {
-    "get-events" : {
-      "href" : "http://localhost:8080/api/events"
-    },
     "self" : {
       "href" : "http://localhost:8080/api/events/10"
+    },
+    "get-events" : {
+      "href" : "http://localhost:8080/api/events"
     },
     "delete-event" : {
       "href" : "http://localhost:8080/api/events/10"
@@ -1443,8 +1430,59 @@ Content-Length: 805
 <div class="content">
 <pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">DELETE /api/events/8 HTTP/1.1
 Content-Type: application/json;charset=UTF-8
-Authorization: Bearer 961cc87c-8874-40c2-b8ae-b48f85f33e22
+Authorization: Bearer ffa4cf0b-1b6c-4dad-825a-71d3405e41c9
 Host: localhost:8080</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="resources-events-delete_http_response"><a class="link" href="#resources-events-delete_http_response">Example response</a></h4>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">HTTP/1.1 200 OK
+Content-Type: application/hal+json
+X-Content-Type-Options: nosniff
+X-XSS-Protection: 1; mode=block
+Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+Pragma: no-cache
+Expires: 0
+X-Frame-Options: DENY
+Link: &lt;/docs/index.html&gt;; rel="profile"
+Content-Length: 818
+
+{
+  "id" : 8,
+  "name" : "test event",
+  "description" : "testing event apis",
+  "beginEnrollmentDateTime" : "2018-10-15T00:00:00",
+  "closeEnrollmentDateTime" : "2018-11-03T23:59:00",
+  "beginEventDateTime" : "2018-11-10T09:00:00",
+  "endEventDateTime" : "2018-11-10T14:00:00",
+  "location" : "Inflean",
+  "basePrice" : 50000,
+  "maxPrice" : 10000,
+  "limitOfEnrollment" : null,
+  "free" : false,
+  "offLine" : false,
+  "eventStatus" : "DRAFT",
+  "manager" : {
+    "id" : 7
+  },
+  "_links" : {
+    "self" : {
+      "href" : "http://localhost:8080/api/events/8"
+    },
+    "get-events" : {
+      "href" : "http://localhost:8080/api/events"
+    },
+    "create-new-event" : {
+      "href" : "http://localhost:8080/api/events"
+    },
+    "profile" : {
+      "href" : "/docs/index.html#resources-events-delete"
+    }
+  }
+}</code></pre>
 </div>
 </div>
 </div>
@@ -1487,7 +1525,7 @@ Host: localhost:8080</code></pre>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2020-05-03 20:06:16 +0900
+Last updated 2020-05-04 21:30:49 +0900
 </div>
 </div>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/github.min.css">

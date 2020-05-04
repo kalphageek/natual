@@ -2,7 +2,7 @@
 ----
 HTTP/1.1 201 Created
 Location: http://localhost:8080/api/events/12
-Content-Type: application/json;charset=UTF-8
+Content-Type: application/json
 X-Content-Type-Options: nosniff
 X-XSS-Protection: 1; mode=block
 Cache-Control: no-cache, no-store, max-age=0, must-revalidate
@@ -31,11 +31,11 @@ Content-Length: 902
     "id" : 11
   },
   "_links" : {
-    "get-events" : {
-      "href" : "http://localhost:8080/api/events"
-    },
     "self" : {
       "href" : "http://localhost:8080/api/events/12"
+    },
+    "get-events" : {
+      "href" : "http://localhost:8080/api/events"
     },
     "profile" : {
       "href" : "/docs/index.html#resources-events-create"

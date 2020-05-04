@@ -19,11 +19,11 @@
     "id" : 11
   },
   "_links" : {
-    "get-events" : {
-      "href" : "http://localhost:8080/api/events"
-    },
     "self" : {
       "href" : "http://localhost:8080/api/events/12"
+    },
+    "get-events" : {
+      "href" : "http://localhost:8080/api/events"
     },
     "profile" : {
       "href" : "/docs/index.html#resources-events-create"

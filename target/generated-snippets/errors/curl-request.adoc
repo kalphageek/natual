@@ -2,7 +2,7 @@
 ----
 $ curl 'http://localhost:8080/api/events' -i -X POST \
     -H 'Content-Type: application/json;charset=UTF-8' \
-    -H 'Authorization: Bearer 59c3d080-59cb-4f83-a4c4-d0968d967ae9' \
+    -H 'Authorization: Bearer ed1b3a87-8b5b-46e4-ba66-bc46b4c2fb6f' \
     -d '{
   "id" : null,
   "name" : null,

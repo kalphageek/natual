@@ -26,6 +26,7 @@ public class ResourceServerConfig extends ResourceServerConfigurerAdapter {
                 .mvcMatchers(HttpMethod.GET, "/api/**").permitAll()
                 .mvcMatchers(HttpMethod.POST, "/api/**").authenticated()
                 .mvcMatchers(HttpMethod.PUT, "/api/**").authenticated()
+                .mvcMatchers(HttpMethod.DELETE, "/api/**").authenticated()
                 .and()
             .exceptionHandling()
                 .accessDeniedHandler(new OAuth2AccessDeniedHandler());
