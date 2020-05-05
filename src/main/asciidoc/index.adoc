@@ -127,7 +127,7 @@ operation::get-an-event[snippets='http-request,path-parameters,http-response,lin
 
 `PUT` 요청을 사용해서 기존 이벤트를 수정할 수 있다.
 
-operation::update-event[snippets='http-request,request-fields,http-response,links']
+operation::update-event[snippets='http-request,path-parameters,request-fields,http-response,links']
 
 [[resources-events-delete]]
 === 이벤트 삭제

@@ -492,6 +492,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#resources-events-update">이벤트 수정</a>
 <ul class="sectlevel3">
 <li><a href="#resources-events-update_http_request">HTTP request</a></li>
+<li><a href="#resources-events-update_path_parameters">Path parameters</a></li>
 <li><a href="#resources-events-update_request_fields">Request fields</a></li>
 <li><a href="#resources-events-update_http_response">Example response</a></li>
 <li><a href="#resources-events-update_links">Links</a></li>
@@ -648,12 +649,7 @@ Content-Length: 836
 {
   "content" : [ {
     "objectName" : "createOrUpdate",
-    "field" : "endEventDateTime",
-    "defaultMessage" : "must not be null",
-    "rejectedValue" : ""
-  }, {
-    "objectName" : "createOrUpdate",
-    "field" : "beginEventDateTime",
+    "field" : "beginEnrollmentDateTime",
     "defaultMessage" : "must not be null",
     "rejectedValue" : ""
   }, {
@@ -663,13 +659,18 @@ Content-Length: 836
     "rejectedValue" : ""
   }, {
     "objectName" : "createOrUpdate",
-    "field" : "beginEnrollmentDateTime",
+    "field" : "beginEventDateTime",
     "defaultMessage" : "must not be null",
     "rejectedValue" : ""
   }, {
     "objectName" : "createOrUpdate",
     "field" : "name",
     "defaultMessage" : "must not be empty",
+    "rejectedValue" : ""
+  }, {
+    "objectName" : "createOrUpdate",
+    "field" : "endEventDateTime",
+    "defaultMessage" : "must not be null",
     "rejectedValue" : ""
   } ],
   "_links" : {
@@ -778,7 +779,7 @@ Content-Length: 95
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ curl 'http://localhost:8080/api/events' -i -X GET \
-    -H 'Authorization: Bearer 595790fe-6bdf-4bd0-b374-031883e655c7'</code></pre>
+    -H 'Authorization: Bearer 7b4dfcac-178e-4c3a-8b21-0ac36017f1f4'</code></pre>
 </div>
 </div>
 </div>
@@ -923,7 +924,7 @@ Content-Length: 1063
 <div class="content">
 <pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">POST /api/events HTTP/1.1
 Content-Type: application/json;charset=UTF-8
-Authorization: Bearer 95c3c6ab-1a80-434e-ad97-9ee3ae6c002a
+Authorization: Bearer 9b2970d5-89f9-4ff0-b997-8f382118b6e5
 Accept: application/json
 Content-Length: 368
 Host: localhost:8080
@@ -1162,7 +1163,7 @@ Content-Length: 902
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">GET /api/events/17 HTTP/1.1
-Authorization: Bearer 9b7064a1-b684-4e33-a7f4-46a58506d042
+Authorization: Bearer b884dcfd-f63d-4bc9-a4d3-d2e18c345ed0
 Host: localhost:8080</code></pre>
 </div>
 </div>
@@ -1297,12 +1298,12 @@ Content-Length: 969
 <div class="content">
 <pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">PUT /api/events/10 HTTP/1.1
 Content-Type: application/json;charset=UTF-8
-Authorization: Bearer 62325d7c-2dfa-4873-9c05-eeba1930fa69
+Authorization: Bearer ca484413-ae0a-4fd2-9d0d-f9101bc8b7de
 Content-Length: 355
 Host: localhost:8080
 
 {
-  "name" : "6qDNUYuHH2",
+  "name" : "BFni1vf0dW",
   "description" : "testing event apis",
   "beginEnrollmentDateTime" : "2018-10-15T00:00:00",
   "closeEnrollmentDateTime" : "2018-11-03T23:59:00",
@@ -1315,6 +1316,28 @@ Host: localhost:8080
 }</code></pre>
 </div>
 </div>
+</div>
+<div class="sect3">
+<h4 id="resources-events-update_path_parameters"><a class="link" href="#resources-events-update_path_parameters">Path parameters</a></h4>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 1. /api/events/{id}</caption>
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Parameter</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>id</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">identifier of an Event.</p></td>
+</tr>
+</tbody>
+</table>
 </div>
 <div class="sect3">
 <h4 id="resources-events-update_request_fields"><a class="link" href="#resources-events-update_request_fields">Request fields</a></h4>
@@ -1405,7 +1428,7 @@ Content-Length: 889
 
 {
   "id" : 10,
-  "name" : "6qDNUYuHH2",
+  "name" : "BFni1vf0dW",
   "description" : "testing event apis",
   "beginEnrollmentDateTime" : "2018-10-15T00:00:00",
   "closeEnrollmentDateTime" : "2018-11-03T23:59:00",
@@ -1491,7 +1514,7 @@ Content-Length: 889
 <div class="content">
 <pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">DELETE /api/events/8 HTTP/1.1
 Content-Type: application/json;charset=UTF-8
-Authorization: Bearer 62325d7c-2dfa-4873-9c05-eeba1930fa69
+Authorization: Bearer ca484413-ae0a-4fd2-9d0d-f9101bc8b7de
 Host: localhost:8080</code></pre>
 </div>
 </div>
@@ -1608,7 +1631,7 @@ Content-Length: 818
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2020-05-05 21:49:07 +0900
+Last updated 2020-05-05 22:02:35 +0900
 </div>
 </div>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/github.min.css">

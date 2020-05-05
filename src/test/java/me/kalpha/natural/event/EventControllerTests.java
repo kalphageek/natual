@@ -213,6 +213,9 @@ public class EventControllerTests extends BaseControllerTests {
                         linkWithRel("create-new-event").description("Link to create an event"),
                         linkWithRel("delete-event").description("Link to delete the event")
                     ),
+                    pathParameters(
+                            parameterWithName("id").description("identifier of an Event.")
+                    ),
                     getRequestFieldsSnippet(),
                     relaxedResponseFields(
                         fieldWithPath("id").description("id of the event")
