@@ -67,9 +67,12 @@ public class EventController {
         EventModel eventModel = new EventModel(event);
 
         eventModel.add(linkTo(EventController.class).withRel("get-events"));
-        if (currentUser != null && currentUser.equals(event.getManager())) {
-            eventModel.add(linkToUpdate(event));
-            eventModel.add(linkToDelete(event));
+        if (currentUser != null) {
+            eventModel.add(linkTo(EventController.class).withRel("create-new-event"));
+            if (currentUser.getRoles().contains(UserRole.ADMIN) || currentUser.equals(event.getManager())) {
+                eventModel.add(linkToUpdate(event));
+                eventModel.add(linkToDelete(event));
+            }
         }
         eventModel.add(linkToProfile("resources-events-get"));
         return ResponseEntity.ok().body(eventModel);
@@ -132,6 +135,7 @@ public class EventController {
 
         EventModel eventModel = new EventModel(event);
         eventModel.add(linkTo(EventController.class).withRel("get-events"));
+        eventModel.add(linkTo(EventController.class).withRel("create-new-event"));
         eventModel.add(linkToDelete(event));
         eventModel.add(linkToProfile("resources-events-update"));
         return ResponseEntity.ok().body(eventModel);
@@ -182,10 +186,12 @@ public class EventController {
     }
 
     private Link linkToUpdate(Event newEvent) {
-        return linkTo(methodOn(this.getClass()).update(newEvent.getId(), null, null, null)).withRel("update-event");
+        //return linkTo(methodOn(this.getClass()).update(newEvent.getId(), null, null, null)).withRel("update-event");
+        return linkTo(this.getClass()).slash(newEvent.getId()).withRel("update-event");
     }
 
     private Link linkToDelete(Event existEvent) {
-        return linkTo(methodOn(this.getClass()).delete(existEvent.getId(), null)).withRel("delete-event");
+        //return linkTo(methodOn(this.getClass()).delete(existEvent.getId(), null)).withRel("delete-event");
+        return linkTo(this.getClass()).slash(existEvent.getId()).withRel("delete-event");
     }
 }

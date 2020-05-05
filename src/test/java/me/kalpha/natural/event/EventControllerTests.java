@@ -118,6 +118,9 @@ public class EventControllerTests extends BaseControllerTests {
                     relaxedLinks(
                         linkWithRel("self").description("link to this event."),
                         linkWithRel("get-events").description("link to all events."),
+                        linkWithRel("update-event").description("Link to update the event"),
+                        linkWithRel("create-new-event").description("Link to create new event"),
+                        linkWithRel("delete-event").description("Link to delete the event"),
                         linkWithRel("profile").description("link to profile.")
                     ),
                     pathParameters(
@@ -151,8 +154,8 @@ public class EventControllerTests extends BaseControllerTests {
                 .andDo(document("get-events",
                     relaxedLinks(
                         linkWithRel("profile").description("Link to profile"),
-                        linkWithRel("self").description("Link to self")
-                        //,linkWithRel("get-an-event").description("Link to get an event")
+                        linkWithRel("self").description("Link to self"),
+                        linkWithRel("create-new-event").description("Link to create new event")
                     ),
                     requestParameters(
                         parameterWithName("page").description("page to retrieve, begin with and default is 0").optional(),
@@ -204,7 +207,14 @@ public class EventControllerTests extends BaseControllerTests {
                 .andExpect(jsonPath("offLine").value(false))
                 .andDo(document("update-event",
                     relaxedLinks(
-                        linkWithRel("profile").description("Link to profile")
+                        linkWithRel("profile").description("Link to profile"),
+                        linkWithRel("self").description("link to this event."),
+                        linkWithRel("get-events").description("link to all events."),
+                        linkWithRel("create-new-event").description("Link to create an event"),
+                        linkWithRel("delete-event").description("Link to delete the event")
+                    ),
+                    pathParameters(
+                            parameterWithName("id").description("identifier of an Event.")
                     ),
                     getRequestFieldsSnippet(),
                     relaxedResponseFields(
@@ -289,13 +299,13 @@ public class EventControllerTests extends BaseControllerTests {
     }
 
     private String getAccessToken() throws Exception {
-        String email = "User" + System.currentTimeMillis() + "@email.com";
+        String email = "Admin" + System.currentTimeMillis() + "@email.com";
         String password = "pass";
 
         var user = User.builder()
                 .email(email)
                 .password(password)
-                .roles(Set.of(UserRole.USER))
+                .roles(Set.of(UserRole.ADMIN))
                 .build();
 
         User newUser = userService.createUser(user);

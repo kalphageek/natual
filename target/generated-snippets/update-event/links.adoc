@@ -4,4 +4,16 @@
 |`+profile+`
 |Link to profile
 
+|`+self+`
+|link to this event.
+
+|`+get-events+`
+|link to all events.
+
+|`+create-new-event+`
+|Link to create an event
+
+|`+delete-event+`
+|Link to delete the event
+
 |===

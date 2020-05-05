@@ -18,5 +18,5 @@ $ echo '{
   "manager" : null
 }' | http POST 'http://localhost:8080/api/events' \
     'Content-Type:application/json;charset=UTF-8' \
-    'Authorization:Bearer ed1b3a87-8b5b-46e4-ba66-bc46b4c2fb6f'
+    'Authorization:Bearer a74df634-9b45-4d9f-b638-2da5eb9f6d3f'
 ----
