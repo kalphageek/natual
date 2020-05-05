@@ -107,31 +107,31 @@ operation::index[snippets='http-request,http-response,links']
 
 `GET` 요청을 사용하여 서비스의 모든 이벤트를 조회할 수 있다.
 
-operation::get-events[snippets='response-fields,curl-request,http-response,links']
+operation::get-events[snippets='curl-request,http-response,response-fields,links']
 [[resources-events-create]]
 === 이벤트 생성
 
 `POST` 요청을 사용해서 새 이벤트를 만들 수 있다.
 
-operation::create-event[snippets='request-fields,http-request,response-fields,http-response,links']
+operation::create-event[snippets='http-request,request-fields,http-response,response-fields,links']
 
 [[resources-events-get]]
 === 이벤트 조회
 
 `Get` 요청을 사용해서 기존 이벤트 하나를 조회할 수 있다.
 
-operation::get-an-event[snippets='http-request,http-response,links']
+operation::get-an-event[snippets='http-request,path-parameters,http-response,links']
 
 [[resources-events-update]]
 === 이벤트 수정
 
 `PUT` 요청을 사용해서 기존 이벤트를 수정할 수 있다.
 
-operation::update-event[snippets='request-fields,http-request,http-response,links']
+operation::update-event[snippets='http-request,request-fields,http-response,links']
 
 [[resources-events-delete]]
 === 이벤트 삭제
 
 `DELETE` 요청을 사용해서 기존 이벤트를 삭제할 수 있다.
 
-operation::delete-event[snippets='request-fields,http-request,http-response,links']
+operation::delete-event[snippets='http-request,path-parameters,http-response,links']

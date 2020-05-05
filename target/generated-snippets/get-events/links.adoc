@@ -7,4 +7,7 @@
 |`+self+`
 |Link to self
 
+|`+create-new-event+`
+|Link to create new event
+
 |===

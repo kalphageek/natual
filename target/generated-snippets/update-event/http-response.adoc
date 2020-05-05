@@ -9,11 +9,11 @@ Pragma: no-cache
 Expires: 0
 X-Frame-Options: DENY
 Link: </docs/index.html>; rel="profile"
-Content-Length: 805
+Content-Length: 889
 
 {
   "id" : 10,
-  "name" : "9dLcVBpiKo",
+  "name" : "6qDNUYuHH2",
   "description" : "testing event apis",
   "beginEnrollmentDateTime" : "2018-10-15T00:00:00",
   "closeEnrollmentDateTime" : "2018-11-03T23:59:00",
@@ -34,6 +34,9 @@ Content-Length: 805
       "href" : "http://localhost:8080/api/events/10"
     },
     "get-events" : {
+      "href" : "http://localhost:8080/api/events"
+    },
+    "create-new-event" : {
       "href" : "http://localhost:8080/api/events"
     },
     "delete-event" : {
