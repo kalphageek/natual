@@ -13,6 +13,6 @@ $ echo '{
   "limitOfEnrollment" : null
 }' | http POST 'http://localhost:8080/api/events' \
     'Content-Type:application/json;charset=UTF-8' \
-    'Authorization:Bearer 9b2970d5-89f9-4ff0-b997-8f382118b6e5' \
+    'Authorization:Bearer 0617c773-ad6f-4a0f-8871-efafbdcd7109' \
     'Accept:application/json'
 ----

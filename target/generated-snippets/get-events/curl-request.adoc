@@ -1,5 +1,5 @@
 [source,bash]
 ----
 $ curl 'http://localhost:8080/api/events' -i -X GET \
-    -H 'Authorization: Bearer 7b4dfcac-178e-4c3a-8b21-0ac36017f1f4'
+    -H 'Authorization: Bearer 2ae25d11-2d71-4e3d-8303-77c6eff65700'
 ----
