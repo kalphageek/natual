@@ -18,10 +18,13 @@ import org.springframework.restdocs.mockmvc.RestDocumentationRequestBuilders;
 import org.springframework.restdocs.payload.JsonFieldType;
 import org.springframework.restdocs.payload.RequestFieldsSnippet;
 import org.springframework.security.oauth2.common.util.Jackson2JsonParser;
+import org.springframework.test.web.servlet.ResultActions;
 import org.springframework.util.LinkedMultiValueMap;
 import org.springframework.util.MultiValueMap;
 
 import java.time.LocalDateTime;
+import java.util.Arrays;
+import java.util.HashSet;
 import java.util.Set;
 
 import static org.springframework.restdocs.headers.HeaderDocumentation.headerWithName;
@@ -177,8 +180,9 @@ public class EventControllerTests extends BaseControllerTests {
         // Given
         String email = "manager@email.com";
         String originalPassword = "manager";
+        Set<UserRole> h = new HashSet<>(Arrays.asList(UserRole.USER));
         User manager = userService.createUser(
-                User.builder().email(email).password(originalPassword).roles(Set.of(UserRole.USER)).build()
+                User.builder().email(email).password(originalPassword).roles(h).build()
         );
 
         Event sampleEvent = this.createSampleEvent();
@@ -230,8 +234,9 @@ public class EventControllerTests extends BaseControllerTests {
         // Given
         String email = "manager@email.com";
         String originalPassword = "manager";
+        Set<UserRole> h = new HashSet<>(Arrays.asList(UserRole.USER));
         User manager = userService.createUser(
-                User.builder().email(email).password(originalPassword).roles(Set.of(UserRole.USER)).build()
+                User.builder().email(email).password(originalPassword).roles(h).build()
         );
 
         Event sampleEvent = this.createSampleEvent();
@@ -302,10 +307,12 @@ public class EventControllerTests extends BaseControllerTests {
         String email = "Admin" + System.currentTimeMillis() + "@email.com";
         String password = "pass";
 
-        var user = User.builder()
+        Set<UserRole> h = new HashSet<>(Arrays.asList(UserRole.ADMIN));
+
+        User user = User.builder()
                 .email(email)
                 .password(password)
-                .roles(Set.of(UserRole.ADMIN))
+                .roles(h)
                 .build();
 
         User newUser = userService.createUser(user);
@@ -319,7 +326,7 @@ public class EventControllerTests extends BaseControllerTests {
         params.add("password", originalPassword);
 
         // When & Then
-        var result = mockMvc.perform(post("/oauth/token")
+        ResultActions result = mockMvc.perform(post("/oauth/token")
                 .params(params)
                 .with(httpBasic(appSecurityProperties.getDefaultClientId(), appSecurityProperties.getDefaultClientSecret()))
                 .accept(MediaType.APPLICATION_JSON))
@@ -364,8 +371,9 @@ public class EventControllerTests extends BaseControllerTests {
         // Given
         String email = "manager@email.com";
         String originalPassword = "manager";
+        Set<UserRole> h = new HashSet<>(Arrays.asList(UserRole.USER));
         User manager = userService.createUser(
-                User.builder().email(email).password(originalPassword).roles(Set.of(UserRole.USER)).build()
+                User.builder().email(email).password(originalPassword).roles(h).build()
         );
         Event sampleEvent = this.createSampleEvent();
         sampleEvent.setManager(manager);
@@ -439,14 +447,18 @@ public class EventControllerTests extends BaseControllerTests {
         // Given
         String managerEmail = "manager@email.com";
         String managerPassword = "manager";
+        Set<UserRole> h = new HashSet<>(Arrays.asList(UserRole.USER));
+
         User manager = userService.createUser(
-                User.builder().email(managerEmail).password(managerPassword).roles(Set.of(UserRole.USER)).build()
+                User.builder().email(managerEmail).password(managerPassword).roles(h).build()
         );
 
         String userEmail = "anotherUser@email.com";
         String userPassword = "user";
+        Set<UserRole> h2 = new HashSet<>(Arrays.asList(UserRole.USER));
+
         User user = userService.createUser(
-                User.builder().email(userEmail).password(userPassword).roles(Set.of(UserRole.USER)).build()
+                User.builder().email(userEmail).password(userPassword).roles(h2).build()
         );
 
         Event sampleEvent = this.createSampleEvent();

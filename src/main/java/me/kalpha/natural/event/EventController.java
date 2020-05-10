@@ -10,6 +10,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.web.PagedResourcesAssembler;
 import org.springframework.hateoas.Link;
+import org.springframework.hateoas.PagedModel;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.BindingResult;
@@ -48,7 +49,7 @@ public class EventController {
         }
 
         Page<Event> events = eventRepository.findAll(pageable);
-        var pagedModel = assembler.toModel(events, e -> new EventModel(e));
+        PagedModel pagedModel = assembler.toModel(events, e -> new EventModel(e));
         if (currentUser != null) {
             pagedModel.add(linkTo(methodOn(EventController.class).create(null, null, null)).withRel("create-new-event"));
         }
@@ -178,7 +179,7 @@ public class EventController {
     }
 
     private Link linkToProfile(String anchor) {
-        var linkValue = "</docs/index.html>; rel=\"profile\";";
+        String linkValue = "</docs/index.html>; rel=\"profile\";";
         if (anchor != null) {
             linkValue = "</docs/index.html#" + anchor + ">; rel=\"profile\";";
         }

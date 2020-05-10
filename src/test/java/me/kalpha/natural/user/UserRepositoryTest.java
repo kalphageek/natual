@@ -6,6 +6,8 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 
+import java.util.Arrays;
+import java.util.HashSet;
 import java.util.Optional;
 import java.util.Set;
 
@@ -35,10 +37,11 @@ public class UserRepositoryTest {
     }
 
     private User user() {
+        Set<UserRole> h = new HashSet<>(Arrays.asList(UserRole.ADMIN, UserRole.USER));
         return User.builder()
                     .email("keesun@email.com")
                     .password("password")
-                    .roles(Set.of(UserRole.ADMIN, UserRole.USER))
+                    .roles(h)
                     .build();
     }
 

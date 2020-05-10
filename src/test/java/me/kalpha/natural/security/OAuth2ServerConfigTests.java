@@ -8,12 +8,15 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.hateoas.MediaTypes;
 import org.springframework.http.MediaType;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.util.LinkedMultiValueMap;
 import org.springframework.util.MultiValueMap;
 
+import java.util.Arrays;
+import java.util.HashSet;
 import java.util.Set;
 
 import static org.springframework.security.test.web.servlet.request.SecurityMockMvcRequestPostProcessors.httpBasic;
@@ -40,10 +43,12 @@ public class OAuth2ServerConfigTests {
         // Given
         String password = "pass";
         String email = "test@email.com";
-        var user = User.builder()
+        Set<UserRole> h = new HashSet<>(Arrays.asList(UserRole.USER));
+
+        User user = User.builder()
                 .email(email)
                 .password(password)
-                .roles(Set.of(UserRole.USER))
+                .roles(h)
                 .build();
         userService.createUser(user);
 
@@ -56,7 +61,7 @@ public class OAuth2ServerConfigTests {
         mockMvc.perform(post("/oauth/token")
                     .params(params)
                     .with(httpBasic(appSecurityProperties.getDefaultClientId(), appSecurityProperties.getDefaultClientSecret()))
-                    .accept(MediaType.APPLICATION_JSON))
+                    .accept(MediaTypes.HAL_JSON))
                 .andDo(print())
                 .andExpect(status().isOk())
                 .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8))
