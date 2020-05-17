@@ -1,0 +1,24 @@
+spring:
+  data.jpa.repositories.bootstrap-mode: deferred
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    password: kalpha
+    url: jdbc:postgresql://localhost:5432/events
+    username: kalpha
+  jpa:
+    hibernate.ddl-auto: create-drop
+    properties.hibernate:
+      format_sql: true
+      jdbc.lob.non_contextual_creation: true
+server:
+  port: 8080
+app-security:
+  admin-password: admin
+  admin-username: admin@email.com
+  default-client-id: myApp
+  default-client-secret: secret
+  user-password: user
+  user-username: user@email.com
+logging.level.org:.hibernate:
+  SQL: DEBUG
+  type.descriptor.sql.BasicBinder: TRACE

@@ -2,12 +2,12 @@
 ----
 PUT /api/events/10 HTTP/1.1
 Content-Type: application/json;charset=UTF-8
-Authorization: Bearer 4b5280a2-9b30-4bab-a09e-bd581f98c30d
+Authorization: Bearer 21e8a193-c0cc-4aea-aaa3-944e92d6ebc4
 Content-Length: 355
 Host: localhost:8080
 
 {
-  "name" : "UnvNeTFl3V",
+  "name" : "UjTd4I4ijf",
   "description" : "testing event apis",
   "beginEnrollmentDateTime" : "2018-10-15T00:00:00",
   "closeEnrollmentDateTime" : "2018-11-03T23:59:00",
